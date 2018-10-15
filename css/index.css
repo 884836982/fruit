@@ -1,0 +1,371 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+
+/* css重置 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote,
+th,
+td,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #444;
+    background: #fff;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+body,
+input,
+textarea {
+    font-size: 12px;
+    font-family: Arial, Verdana, "\5b8b\4f53";
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+}
+
+input {
+    vertical-align: middle;
+}
+
+textarea {
+    resize: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 12px;
+}
+
+ul,
+ol,
+dl,
+dt,
+dd {
+    list-style-type: none;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    color: #008842;
+}
+
+i,
+s {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/*clearfix 清除浮动*/
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after,
+.wrap:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*公用*/
+
+body {
+    background: #f7f8f8;
+}
+
+.w {
+    background: #f7f8f8;
+}
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.w1200 {
+    width: 1200px !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.none {
+    display: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.textright {
+    text-align: right;
+}
+
+.textleft {
+    text-align: left;
+}
+
+
+/*=================header=============*/
+
+#header {
+    width: 100%;
+    height: 30px;
+    background: #f7f9f8;
+}
+
+#header .wrap {
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+#header .fl li {
+    line-height: 30px;
+    float: left;
+    line-height: 30px;
+    margin-right: 10px;
+}
+
+#header .fl .city {
+    position: relative;
+    color: #008842;
+}
+
+#header .fl .title {
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    margin: 7px 0;
+    cursor: pointer;
+}
+
+#header .fl .content {
+    float: left;
+    position: relative;
+}
+
+#header .city_name {
+    color: #008842;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    padding: 0 20px 5px 5px;
+}
+
+#header .city_name span {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    top: 9px;
+    right: 8px;
+    width: 8px;
+    height: 4px;
+    margin-left: 5px;
+    background: url(../images/header-img.png) no-repeat 0 0;
+    -webkit-transition: transform 0.2s ease-in 0s;
+    -ms-transition: transform 0.2s ease-in 0s;
+    -o-transition: transform 0.2s ease-in 0s;
+    -moz-transition: transform 0.2s ease-in 0s;
+    transition: transform 0.2s ease-in 0s;
+}
+
+#header .city-con {
+    display: none;
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 482px;
+    border: 2px solid #007f4d;
+    background: #fff;
+}
+
+#header .headline {
+    padding: 0 15px;
+    line-height: 30px;
+    color: #727272;
+    background: #ededed;
+}
+
+#header .headline a {
+    float: right;
+    color: #008842;
+    font-family: simsun;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0 5px;
+}
+
+#header .city-hot {
+    overflow: hidden;
+    margin: 10px 15px;
+    line-height: 18px;
+}
+
+#header .city-hot span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #666;
+}
+
+#header .city-hot i {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background: url(../images/header-img.png) no-repeat left top;
+    background-position: -174px 0;
+}
+
+#header .city-hot a {
+    color: #727272;
+    margin: 0 5px;
+    float: left;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 3px 10px 3px 15px;
+}
+
+#header .citytab {
+    margin: 10px 0;
+    padding: 0 15px;
+}
+
+#header .citytab span {
+    float: left;
+    width: 19%;
+    border: 1px solid #fff;
+    border-bottom-color: #e0e0e0;
+    text-align: center;
+    cursor: pointer;
+}
+
+#header .citytab .active {
+    border-color: #e0e0e0;
+    border-bottom-color: #fff;
+}
+
+#header .citylist.active {
+    display: block;
+}
+
+#header .citylist {
+    display: none;
+    margin: 0 15px 15px;
+}
+
+#header .citylist .hot {
+    color: #008842;
+}
+
+#header .citylist dl {
+    overflow: hidden;
+}
+
+#header .citylist dt {
+    font: bold 12px/22px Arial, "Microsoft YaHei";
+    color: #008842;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    display: block;
+}
+
+#header .citylist dd {
+    float: left;
+    line-height: 22px;
+    display: block;
+    overflow: hidden;
+    width: 430px;
+}
+
+#header .citylist dd a {
+    color: #727272;
+    width: 18%;
+    margin: 0 0 0 5px;
+    line-height: 22px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#header .citylist a:hover {
+    text-decoration: none;
+    color: #008842;
+}
