@@ -279,14 +279,14 @@
                 </li>
             </ul>
             <ul class="fr clearfix">
-                <li class="TEL"><a href="javascript:;" target="_blank"><i></i>礼品兑换券入口</a></li>
+                <li class="tel"><a href="javascript:;" target="_blank"><i></i>礼品兑换券入口</a></li>
                 <li class="pay"><a href="javascript:;" target="_blank"><i></i>储值卡</a></li>
 
                 <li class="mobile">
                     <div class="tit"><a href="javascript:void(0)"><i></i>手机易果<s></s></a></div>
                     <div class="con">
-                        <div class="item"><img src="" width="125" height="125"><span>扫一扫下载APP</span></div>
-                        <div class="item"><img src="" width="125" height="125"><span>易果生鲜微信</span></div>
+                        <div class="item"><img src="images/qrcode_app.jpg" width="125" height="125"><span>扫一扫下载APP</span></div>
+                        <div class="item"><img src="images/qrcode_wechat.jpg" width="125" height="125"><span>易果生鲜微信</span></div>
                     </div>
                 </li>
                 <li class="myyiguo">
@@ -306,7 +306,7 @@
                 </li>
                 <li id="_logout" style="display:none"><a href="javascript:;" class="logout">[退出]</a></li>
                 <li id="_loginname" style="display:none">
-                    <a href=""></a>
+                    <a href="javascript:;"></a>
                 </li>
                 <li id="_register"><a href="javascript:;">[注册]</a></li>
                 <li id="_login">
@@ -315,8 +315,298 @@
             </ul>
         </div>
     </div>
-    <div id="search"></div>
-    <div id="banner"></div>
+    <div id="search">
+        <div class="wrap clearfix">
+            <div class="logo">
+                <a href="javascript:;"><img src="images/logo.png" alt=""></a>
+            </div>
+            <div class="search">
+                <div class="search-bar clearfix">
+                    <input type="text" id="keyword" name="keyword" class="search-input" value="输入商品名／编号／拼音" onfocus=" if (this.value == '输入商品名／编号／拼音') {this.value = '';this.style.color = '#000';} " onblur=" if (this.value == '') {this.value = '输入商品名／编号／拼音';this.style.color = '#999';} ">
+                    <input class="search-btn" type="submit" value="搜索">
+                </div>
+                <ul class="hide" id="shelper" style="display: none;"></ul>
+                <div class="search-keywords" id="keywords">
+                    <a href="javascript:;" target="_blank">澳大利亚脐橙</a>
+                    <a href="javascript:;" class="hot" target="_blank">奇异果</a>
+                    <a href="javascript:;" class="hot" target="_blank">谷饲</a>
+                    <a href="javascript:;" target="_blank">家佳康</a>
+                    <a href="javascript:;" class="hot" target="_blank">三文鱼</a>
+                    <a href="javascript:;" target="_blank">贝类</a>
+                    <a href="javascript:;" class="hot" target="_blank">鳕鱼</a>
+                    <a href="javascript:;" target="_blank"></a>
+                </div>
+            </div>
+            <div class="shopping-cart">
+                <dl>
+                    <dt class="shopping-btn"><a href="javascript:;"> <span class="totleNum"><b>0</b></span><b class="totlePrice">0.0</b></a></dt>
+                    <dd class="shopping-list" style="display: block;">
+                        <div class="spacer"></div>
+                        <div class="nogoods">
+                            购物车中还没有商品，赶紧选购吧！
+                        </div>
+                        <div class="goods" style="display: none;">
+                            <p id="deliveryType" style="display:none;">满100元包邮！</p>
+                            <ul></ul>
+                            <div class="price-total">
+                                <div><span class="totleNum">共<b>0</b>件商品</span><span>共计<b class="totlePrice">0.0</b></span></div>
+                                <div><a href="" class="settleup">去购物车</a></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <div class="wrap">
+            <!--商品分类 开始-->
+            <div class="catalogs">
+                <div class="catalogs-title"><a href="javascript:;">全部商品分类▼</a></div>
+                <div class="catalogs-list block" style="display: none;">
+                    <div class="item">
+                        <h3 class="t01_channelhome"><a href=""><i></i>进口水果<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">进口水果</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">奇异果</a>
+                                <a href="" target="_blank">李</a>
+                                <a href="" target="_blank">莓</a>
+                                <a href="" target="_blank">牛油果</a>
+                                <a href="" target="_blank">提子</a>
+                                <a href="" target="_blank">苹果</a>
+                                <a href="" target="_blank">梨</a>
+                                <a href="" target="_blank">柑桔橙柚</a>
+                                <a href="" target="_blank">山竹</a>
+                                <a href="" target="_blank">香蕉</a>
+                                <a href="" target="_blank">火龙果</a>
+                                <a href="" target="_blank">椰子</a>
+                                <a href="" target="_blank">芒果</a>
+                                <a href="" target="_blank">凤梨</a>
+                                <a href="" target="_blank">榴莲</a>
+                                <a href="" target="_blank">热带水果</a>
+                                <a href="" target="_blank">时令水果</a>
+                                <a href="" target="_blank">原箱水果</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="进口水果"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t02_channelhome"><a href=""><i></i>国产水果<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">国产水果</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">苹果</a>
+                                <a href="" target="_blank">梨</a>
+                                <a href="" target="_blank">柑桔橙柚</a>
+                                <a href="" target="_blank">瓜</a>
+                                <a href="" target="_blank">葡萄</a>
+                                <a href="" target="_blank">桃</a>
+                                <a href="" target="_blank">李</a>
+                                <a href="" target="_blank">枣</a>
+                                <a href="" target="_blank">莓</a>
+                                <a href="" target="_blank">芒果</a>
+                                <a href="" target="_blank">凤梨</a>
+                                <a href="" target="_blank">芭乐</a>
+                                <a href="" target="_blank">百香果</a>
+                                <a href="" target="_blank">热带水果</a>
+                                <a href="" target="_blank">时令水果</a>
+                                <a href="" target="_blank">原箱水果</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="国产水果"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t05_channelhome"><a href=""><i></i>精选肉类<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">精选肉类</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">牛排</a>
+                                <a href="" target="_blank">冰鲜肉</a>
+                                <a href="" target="_blank">进口牛肉</a>
+                                <a href="" target="_blank">国产牛肉</a>
+                                <a href="" target="_blank">猪肉</a>
+                                <a href="" target="_blank">羊肉</a>
+                                <a href="" target="_blank">香肠</a>
+                                <a href="" target="_blank">火腿/培根</a>
+                                <a href="" target="_blank">肉制品</a>
+                                <a href="" target="_blank">进口鹿肉</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="精选肉类"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t06_channelhome"><a href=""><i></i>禽类蛋品<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">禽类蛋品</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">鸡</a>
+                                <a href="" target="_blank">鸭</a>
+                                <a href="" target="_blank">鹅/鸽/特色禽类</a>
+                                <a href="" target="_blank">蛋</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="禽类蛋品"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t12_channelhome"><a href=""><i></i>即烹美食<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">即烹美食</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">独家秘制</a>
+                                <a href="" target="_blank">生猛海鲜</a>
+                                <a href="" target="_blank">日韩料理</a>
+                                <a href="" target="_blank">经典主菜</a>
+                                <a href="" target="_blank">中华美食</a>
+                                <a href="" target="_blank">精致西餐</a>
+                                <a href="" target="_blank">开胃小菜</a>
+                                <a href="" target="_blank">东南亚风味</a>
+                                <a href="" target="_blank">田园时蔬</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t04_channelhome"><a href=""><i></i>海鲜水产<s>&gt;</s></a></h3>
+                        <div class="sub-item">
+                            <h4><a href="">海鲜水产</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">银鳕鱼</a>
+                                <a href="" target="_blank">虾仁</a>
+                                <a href="" target="_blank">鱼</a>
+                                <a href="" target="_blank">三文鱼</a>
+                                <a href="" target="_blank">虾</a>
+                                <a href="" target="_blank">蟹</a>
+                                <a href="" target="_blank">贝</a>
+                                <a href="" target="_blank">活鲜</a>
+                                <a href="" target="_blank">海产干货</a>
+                                <a href="" target="_blank">特色海产</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="海鲜水产"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t08_channelhome"><a href=""><i></i>乳品糕点<s>&gt;</s></a></h3>
+                        <div class="sub-item">
+                            <h4><a href="">乳品糕点</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">奶酪</a>
+                                <a href="" target="_blank">黄油/奶油</a>
+                                <a href="" target="_blank">酸奶/乳酸饮料</a>
+                                <a href="" target="_blank">牛奶</a>
+                                <a href="" target="_blank">面包</a>
+                                <a href="" target="_blank">蛋糕</a>
+                                <a href="" target="_blank">甜点</a>
+                                <a href="" target="_blank">月饼</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="乳品糕点"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t03_channelhome"><a href=""><i></i>新鲜蔬菜<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">新鲜蔬菜</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">叶菜类</a>
+                                <a href="" target="_blank">根茎类</a>
+                                <a href="" target="_blank">茄果/瓜果类</a>
+                                <a href="" target="_blank">花菜/豆类</a>
+                                <a href="" target="_blank">香料</a>
+                                <a href="" target="_blank">菌菇</a>
+                                <a href="" target="_blank">沙拉菜</a>
+                                <a href="" target="_blank">冷冻蔬菜</a>
+                                <a href="" target="_blank">豆制品</a>
+                                <a href="" target="_blank">葱蒜类</a>
+                                <a href="" target="_blank">蔬菜组合</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="新鲜蔬菜"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t10_channelhome"><a href=""><i></i>方便速食<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">方便速食</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">养生汤品</a>
+                                <a href="" target="_blank">冷冻点心</a>
+                                <a href="" target="_blank">中式主食</a>
+                                <a href="" target="_blank">火锅料</a>
+                                <a href="" target="_blank">熟食</a>
+                                <a href="" target="_blank">半成品菜</a>
+                                <a href="" target="_blank">易盒家宴</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="方便速食"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t07_channelhome"><a href="javascript:;"><i></i>粮油杂货<s>&gt;</s></a></h3>
+                        <div class="sub-item">
+                            <h4><a href="javascript:;">粮油杂货</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">米</a>
+                                <a href="" target="_blank">杂粮</a>
+                                <a href="" target="_blank">面/面制品</a>
+                                <a href="" target="_blank">油</a>
+                                <a href="" target="_blank">调味料</a>
+                                <a href="" target="_blank">干货</a>
+                                <a href="" target="_blank">果干/零食</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href="javascript:;"><img src="" alt="粮油杂货"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t09_channelhome"><a href=""><i></i>饮料酒水<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">饮料酒水</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">水</a>
+                                <a href="" target="_blank">果汁/饮料</a>
+                                <a href="" target="_blank">冲调饮品</a>
+                                <a href="" target="_blank">葡萄酒/酒具</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="饮料酒水"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 class="t11_channelhome"><a href=""><i></i>礼品礼券<s>&gt;</s></a></h3>
+                        <div class="sub-item" style="display: none;">
+                            <h4><a href="">礼品礼券</a></h4>
+                            <div class="sub-list">
+                                <a href="" target="_blank">礼品礼盒</a>
+                                <a href="" target="_blank">礼卡礼券</a>
+                                <a href="" target="_blank">原膳礼盒</a>
+                            </div>
+                            <div class="catalogs-ad">
+                                <a href=""><img src="" alt="礼品礼券"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--商品分类 结束-->
+        </div>
+    </div>
+    <div id="banner">
+    </div>
     <div id="exhibits"></div>
     <div id="goods"></div>
     <div id="footer"></div>

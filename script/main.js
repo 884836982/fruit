@@ -68,3 +68,41 @@ $(".city-con").mouseleave(function() {
         transform: "rotate(0deg)"
     });
 });
+//手机易购二级菜单
+$(".mobile").mouseenter(function() {
+    $(this).addClass("current")
+        .children(".con").css({
+            display: "block"
+        })
+})
+$(".mobile").mouseleave(function() {
+    $(this).removeClass("current")
+        .children(".con").css({
+            display: "none"
+        })
+});
+//我的易购二级菜单
+$(".myyiguo").mouseenter(function() {
+    $(this).addClass("current")
+        .children(".con").css({
+            display: "block"
+        })
+})
+$(".myyiguo").mouseleave(function() {
+    $(this).removeClass("current")
+        .children(".con").css({
+            display: "none"
+        })
+})
+$(".con").mouseenter(function() {
+    $(this).css({
+            display: "block"
+        })
+        .parent().addClass("current")
+})
+$(".con").mouseleave(function() {
+    $(this).css({
+            display: "none"
+        })
+        .parent().removeClass("current")
+})
