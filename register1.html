@@ -7,6 +7,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        .register {
+            padding-top: 54px;
+        }
+        
+        .register-succ {
+            border-top-color: #008842;
+            background: #fff;
+            height: 247px;
+            border: 1px solid #e3e6e0;
+            border-top: 2px solid #70bd2c;
+            margin-top: 80px;
+            color: #58a51f;
+            font: 24px/1 "Microsoft YaHei";
+            text-align: center;
+            padding-top: 80px;
+            margin-bottom: 60px;
+        }
+        
+        .register-succ i {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 50px;
+            height: 50px;
+            background: url(../images/bg_login.png) -360px -196px no-repeat;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+        
+        .register-succ a {
+            display: block;
+            width: 127px;
+            height: 40px;
+            text-align: center;
+            font: 16px/40px "Microsoft YaHei";
+            color: #fff;
+            margin: 60px auto;
+            background-color: #e8380d;
+            border-radius: 3px;
+        }
+    </style>
     <title>Document</title>
 </head>
 
@@ -18,78 +60,18 @@
             <div class="wrap">
                 <div class="logo">
                     <a href="javascript:;" target="_blank"></a>
-                    <span class="h-tit">登录</span>
+                    <span class="h-tit">注册</span>
                 </div>
             </div>
         </div>
-        <!--         
-        <script type="text/javascript">
-        
-            $(function () {
-                $('#Pwd').keydown(function (e) {
-        
-                    if (e.keyCode == 13) {
-                        document.getElementById("btnLogin").click(); //调用登录按钮的登录事件
-                    }
-                });
-        
-                $("#btnLogin").click(function () {
-                    if (Form.Validate($("#UserName").val())) {
-                        $("#msg-wrap").addClass("msg-wrap").children("div").addClass("msg-error").html(Form.VC);
-                        return false;
-                    }
-        
-                    $('form').submit();
-                });
-        
-                $(".gray").click(function () {
-                    $("#imgcode").attr("src", "/verifycode" + "?_t=" + new Date().getTime());
-                });
-                
-                $("#p-code-btn").on("click", ".qq,.sina", function () {
-                    $("#p-code").show();
-                })
-                $("#p-code").on("click", ".close", function () {
-                    $("#p-code").hide();
-                })
-        
-            });
-        
-        </script> -->
-        <form action="" method="post">
-            <div class="login">
-                <div class="wrap clearfix">
-                    <div class="fl">
-                        <a href="javascript:;" target="_blank"><img width="666" height="418" src="http://img07.yiguoimg.com/e/others/170505/9288707397001893.jpg"></a>
-                    </div>
-                    <div class="fr">
-                        <p class="right"></p>
-                        <div class="login-main">
-                            <p><strong>欢迎登录</strong><span>还没有账号？<a class="green" href="/Register">立即注册</a></span></p>
-
-                            <div id="msg-wrap">
-                                <div> </div>
-                            </div>
-
-                            <p>
-                                <span class="input-phone-icon">&nbsp;</span><input class="input input-phone" id="UserName" name="UserName" placeholder="邮箱/账号/已验证手机" type="text" value="">
-                            </p>
-                            <p><span class="input-key-icon">&nbsp;</span><input class="input input-key" id="Pwd" name="Pwd" placeholder="密码" type="password"></p>
-                            <p><input class="input input-key" id="VerifyCode" name="VerifyCode" placeholder="验证码" style="width:100px;float:left;" type="text" value=""><img src="images/verifycode.jpg" id="imgcode" onclick="this.src=this.src" style="float:left;">
-                                <a
-                                    href="javascript:void(0)" class="gray" style="float:left;margin-top:13px;">换一张</a>
-                            </p>
-                            <p><label><input data-val="true" data-val-required="自动登录 字段是必需的。" id="UserNameRemeber" name="UserNameRemeber" type="checkbox" value="true"><input name="UserNameRemeber" type="hidden" value="false"> 自动登录</label><span> <a class="gray" href="/FindPwd">忘记登录密码？</a>   </span></p>
-                            <p><a id="btnLogin" href="javascript:void(0)" class="btn-green-l">登 &nbsp; 录</a></p>
-                            <p>第三方登录</p>
-                            <!--<div><a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&amp;client_id=100270138&amp;redirect_uri=https://login.yiguo.com/QQ/Login" class="qq"><i></i></a><a href="https://api.weibo.com/oauth2/authorize?client_id=62745858&amp;redirect_uri=https://login.yiguo.com/Weibo/Login&amp;response_type=code&amp;display=default" class="sina"><i></i></a><a href="/SQ" class="ay"><i></i></a></div>-->
-                            <div id="p-code-btn"><a href="javascript:;" class="qq"><i></i></a><a href="javascript:;" class="sina"><i></i></a><a href="/SQ" class="ay"><i></i></a></div>
-                        </div>
-                    </div>
+        <div class="register">
+            <div class="wrap">
+                <div class="register-succ">
+                    <i></i>恭喜您已注册成功！<br>
+                    <a href="http://www.yiguo.com/GetSession.aspx" class="btn-orange-s">立即去购物</a>
                 </div>
             </div>
-        </form>
-
+        </div>
         <!------- 页尾开始 ------->
         <div id="footer">
             <div class="footer_service">

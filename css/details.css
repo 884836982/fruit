@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.detail {
+  position: relative;
+  float: left; }
+
+#small {
+  margin-top: 100px;
+  width: 400px;
+  height: 400px;
+  position: relative;
+  box-shadow: 0 0 5px #000;
+  margin-left: 100px; }
+
+#small img {
+  width: 400px;
+  height: 400px; }
+
+#frame {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 5px #000;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: none;
+  background-image: url(timg.jpg);
+  background-size: 400px 400px;
+  background-repeat: no-repeat; }
+
+#film {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  /*	cursor:none;*/ }
+
+#big {
+  top: 0;
+  left: 420px;
+  margin-top: 100px;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #000;
+  margin-left: 100px;
+  position: absolute;
+  display: none;
+  z-index: 2; }
+
+#big img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 800px;
+  height: 800px; }
+
+.bottom {
+  float: left; }
+  .bottom .product-info {
+    width: 680px;
+    margin-left: 50px;
+    margin-top: 170px; }
+    .bottom .product-info .summary-name {
+      margin: 0 85px 20px 0; }
+      .bottom .product-info .summary-name h1 {
+        font: normal 26px "Microsoft YaHei"; }
+      .bottom .product-info .summary-name p {
+        height: 40px;
+        margin-top: 5px;
+        color: #777;
+        font: normal 16px/20px "Microsoft YaHei"; }
+    .bottom .product-info .summary-price {
+      height: 70px;
+      padding: 10px 20px;
+      background: #fff;
+      position: relative; }
+      .bottom .product-info .summary-price .pro-price {
+        float: left;
+        height: 70px;
+        width: 423px; }
+        .bottom .product-info .summary-price .pro-price .tt {
+          width: 60px; }
+        .bottom .product-info .summary-price .pro-price span {
+          display: inline-block; }
+        .bottom .product-info .summary-price .pro-price em {
+          padding: 0 5px;
+          font-size: 18px;
+          color: #ff0000;
+          font-style: normal; }
+        .bottom .product-info .summary-price .pro-price strong {
+          color: #ff0000;
+          font-size: 22px;
+          font-weight: normal; }

@@ -1,0 +1,102 @@
+.w {
+  background: #f7f8f8; }
+
+.header {
+  border: none;
+  background: #e0e0e0; }
+  .header .wrap {
+    padding: 15px 0 5px 0; }
+    .header .wrap .logo {
+      position: relative; }
+      .header .wrap .logo a {
+        display: inline-block;
+        width: 195px;
+        height: 50px;
+        background: url(../images/logo.png) no-repeat; }
+      .header .wrap .logo .h-tit {
+        font: 28px/1 Microsoft YaHei;
+        position: absolute;
+        top: 6px;
+        white-space: nowrap;
+        color: #008842;
+        left: 240px; }
+
+.login {
+  margin: 0;
+  border: none; }
+  .login .fl img {
+    margin-top: 20px; }
+  .login .fr {
+    padding-right: 105px; }
+    .login .fr p {
+      margin-bottom: 20px;
+      font: 12px Arial, "SimSun";
+      color: #878787;
+      position: relative;
+      overflow: hidden; }
+      .login .fr p span {
+        position: absolute;
+        right: 0;
+        top: 0; }
+    .login .fr .login-main {
+      width: 308px;
+      padding: 30px 20px 20px;
+      background-color: #fff;
+      border: 1px solid #e3e6e0; }
+    .login .fr .input,
+    .login .fr .register .input,
+    .login .fr .forget-pwd .input {
+      border: 1px solid #c1c1c1;
+      background-color: #fff;
+      height: 38px;
+      vertical-align: middle;
+      padding-left: 50px;
+      width: 254px;
+      font: 14px/38px "Microsoft YaHei"; }
+    .login .fr .input-phone-icon,
+    .login .fr .input-key-icon {
+      position: absolute;
+      left: 1px;
+      top: 1px !important;
+      *top: 2px !important;
+      _top: 3px !important;
+      width: 40px;
+      height: 38px;
+      background-image: url(../images/bg_input.png);
+      background-repeat: no-repeat; }
+    .login .fr .input-phone-icon {
+      background-position: 0 -120px; }
+    .login .fr .input-phone {
+      background-position: 0 -120px; }
+    .login .fr .input-key-icon {
+      background-position: 0 -180px; }
+  .login .btn-green-l,
+  .login .btn-green-s,
+  .login .btn-orange-s {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    font: 18px/50px "Microsoft YaHei"; }
+  .login .btn-green-l {
+    width: 306px; }
+  .login .btn-green-l,
+  .login .btn-green-s {
+    background: #008842; }
+  .login i,
+  .login .register i {
+    width: 88px;
+    height: 20px;
+    margin-right: 20px;
+    background-image: url(../images/bg_login.png);
+    background-repeat: no-repeat; }
+  .login .qq i {
+    background-position: -60px -200px; }
+  .login .sina i {
+    background-position: -160px -200px; }
+  .login .ay i {
+    background-position: -260px -200px;
+    width: 57px;
+    margin-right: 0; }

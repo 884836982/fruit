@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+.tab-content .active {
+            display: block;
+        }
+        
+        .register {
+            padding-top: 54px;
+        }
+        
+        .tabbable {
+            position: relative;
+            width: 100%;
+            margin: 10px auto 0;
+        }
+        
+        .register .tab-content .tab-pane {
+            border: 1px solid #c4dfb1;
+            background-color: #fff;
+            padding: 40px 0 50px;
+        }
+        
+        .register p,
+        .forget-pwd p {
+            margin-bottom: 29px;
+            line-height: 38px;
+            font: 14px Arial, "Microsoft YaHei";
+        }
+        
+        .register .field-name {
+            float: left;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 220px;
+            text-align: right;
+            padding-right: 20px;
+        }
+        
+        .register .input {
+            float: left;
+            margin-right: 20px;
+            border: 1px solid #c1c1c1;
+            background-color: #fff;
+            height: 38px;
+            vertical-align: middle;
+            padding-left: 14px;
+            width: 290px;
+            font: 14px/38px "Microsoft YaHei";
+            margin-bottom: 29px;
+        }
+        
+        .gray {
+            color: #666666;
+        }
+        
+        .register .input-yzm {
+            width: 147px;
+        }
+        
+        .register .fl strong {
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+            border: 1px solid #c1c1c1;
+            margin-right: 5px;
+        }
+    }
+    img {
+        border: none;
+    }
+    .input-phone,
+    .input-mail,
+    .input-key {
+        background-image: url(../images/bg_input.png);
+        background-repeat: no-repeat;
+    }
+    .input-phone {
+        background-position: 276px -30px;
+    }
+    .input-key {
+        background-position: 276px -70px;
+    }
+    .btn-yzm {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        width: 121px;
+        height: 38px;
+        text-align: center;
+        line-height: 38px;
+        background-color: #f7f7f7;
+        border: 1px solid #c1c1c1;
+        /* color: #64b22a; */
+        
+        margin-right: 20px;
+    }
+    input[type=checkbox] {
+        margin-right: 9px;
+        height: 14px;
+        width: 14px;
+        vertical-align: -1px;
+    }
+    .btn-green-l {
+        width: 306px;
+        display: inline-block;
+        height: 50px;
+        text-align: center;
+        color: #fff;
+        font: 18px/50px "Microsoft YaHei";
+    }
+    .btn-green-l:hover {
+        color: #fff;
+    }
+    .btn-green-l,
+    .btn-green-s {
+        background: #008842;
+    }
+    .register .fr {
+        position: relative;
+        height: 340px;
+        width: 330px;
+        text-align: center;
+        padding-top: 50px;
+        font: 14px/56px "Microsoft YaHei";
+    }
+    .register .fr .rimg {
+        position: absolute;
+        left: -140px;
+        top: 70px;
+    }
+    .right {
+        position: absolute;
+        top: -27px;
+        right: 0;
+        font: 14px/1 "Microsoft YaHei";
+        text-align: right;
+    }
+    .right .orange {
+        margin-right: 36px;
+        color: #ef760a;
+        text-decoration: underline;
+    }
+}
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="w">
+
+        <!------- 顶部工具栏结束 ------->
+        <div class="header clearfix">
+            <div class="wrap">
+                <div class="logo">
+                    <a href="javascript:;" target="_blank"></a>
+                    <span class="h-tit">注册</span>
+                </div>
+            </div>
+        </div>
+        <div class="register">
+            <div class="wrap">
+                <div class="tabbable">
+                    <div class="tab-content">
+                        <div class="tab-pane clearfix active" id="tab1">
+                            <div class="fl">
+                                <p class="clearfix" style="line-height:38px;">
+                                    <span class="field-name" style="float:left;">图形验证码</span>
+                                    <input type="text" id="verficode_tab1" placeholder="图形验证码" class="input input-yzm" style="float:left;">
+                                    <strong style="float:left;"></strong><a href="javascript:void(0)" class="gray" style="float:left;line-height:38px;">换一张</a>
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <span class="field-name">手机号</span>
+                                    <input class="input input-phone" id="Phone_Mobile" name="Phone_Mobile" placeholder="请输入您的手机号" type="text" value="">
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <span class="field-name">手机验证码</span>
+                                    <input class="input input-yzm" id="Phone_VerifyCode" name="Phone_VerifyCode" placeholder="手机验证码" type="text" value="">
+                                    <a href="javascript:void(0)" class="btn-yzm" id="Phone_SendCode">获取验证码</a>
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <span class="field-name">设置密码</span>
+                                    <input class="input input-key" id="Phone_Password" name="Phone_Password" placeholder="6-20位字母、符号或数字" type="password">
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <span class="field-name">确认密码</span>
+                                    <input class="input input-key" id="Phone_ConfimPassword" name="Phone_ConfimPassword" placeholder="再次输入密码" type="password">
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <span class="field-name">邀请码</span>
+                                    <input class="input input-key" id="Phone_AtCode" name="Phone_AtCode" placeholder="邀请码" type="text" value="">
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <span class="field-name" style="height:1px;"></span><label><input type="checkbox" id="tab1chk" checked="checked">我已阅读并同意<a href="javascript:void(0)" class="green btn-protocol">《易果服务协议》</a><span></span></label>
+                                    <input id="DeviceId" name="DeviceId" type="hidden" value="">
+                                </p>
+                                <span></span>
+                                <p><span class="field-name" style="height:1px;"></span><a href="javascript:void(0)" class="btn-green-l" id="PhoneReg">立即注册</a></p>
+                            </div>
+                            <div class="fr">
+                                <div class="rimg"><img src="http://img06.yiguoimg.com/e/web/161205/01853/142855/register.png"></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        我已经注册，现在就 <a class="orange" href="/">登录</a>
+
+                    </div>
+                </div>
+            </div>
+            <!--<div class="tab-pane clearfix" id="tab2">
+                    <div class="fl">
+                        <p>
+                            <span class="field-name">图形验证码</span>
+                            <input type="text" id="verficode_tab2" placeholder="图形验证码" class="input input-yzm" />
+                            <span></span>
+                        </p>
+                        <p>
+                            <span class="field-name">邮箱</span>
+                            <input class="input input-mail" id="Email" name="Email" placeholder="请输入您的邮箱" type="text" value="" />
+                            <span></span>
+                        </p>
+                        <p>
+                            <span class="field-name">设置密码</span>
+                            <input class="input input-key" id="Email_Password" name="Email_Password" placeholder="6-20位字母、符号或数字" type="password" />
+                            <span></span>
+                        </p>
+                        <p>
+                            <span class="field-name">确认密码</span>
+                            <input class="input input-key" id="Email_ConfimPassword" name="Email_ConfimPassword" placeholder="再次输入密码" type="password" />
+                            <span></span>
+                        </p>
+                        <p>
+                            <span class="field-name">手机号</span>
+                            <input class="input input-phone" id="Email_Mobile" name="Email_Mobile" placeholder="请输入您的手机号" type="text" value="" />
+                            <span></span>
+                        </p>
+                        <p>
+                            <span class="field-name">手机验证码</span>
+                            <input class="input input-yzm" id="Email_VerifyCode" name="Email_VerifyCode" placeholder="手机验证码" type="text" value="" />
+                            <a href="javascript:void(0)" class="btn-yzm" id="Email_SendCode">获取验证码</a>
+                            <span></span>
+                        </p>
+                        <p>
+                            <span class="field-name">邀请码</span>
+                            <input class="input input-key" id="Email_AtCode" name="Email_AtCode" placeholder="邀请码" type="text" value="" />
+                            <span></span>
+                        </p>
+                        <p>
+                            <span class="field-name"></span><label><input type="checkbox" id="tab2chk" checked="checked" />我已阅读并同意<a href="javascript:void(0)" class="green btn-protocol">《易果服务协议》</a><span></span></label>
+                        </p>
+                        <p><span class="field-name"></span><a href="javascript:void(0)" class="btn-green-l" id="EmailReg">立即注册</a></p>
+                    </div>
+                    <div class="fr">
+                    
+                        
+                    </div>
+                </div>-->
+
+        </div>
+        <!------- 页尾开始 ------->
+        <div id="footer">
+            <div class="footer_service">
+                <div class="wrap">
+                    <ul>
+                        <li class="s1">
+                            <b>全球精选</b>
+                            <span>一站式生鲜购物方案</span>
+                        </li>
+                        <li class="s2">
+                            <b>多仓直发</b>
+                            <span>特有次日达配送服务</span>
+                        </li>
+                        <li class="s3">
+                            <b>源头直采</b>
+                            <span>精选正宗品质好食材</span>
+                        </li>
+                        <li class="s4">
+                            <b>天天底价</b>
+                            <span>会员专属优惠购不停</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="wrap">
+                    <dl class="col1">
+                        <dt>新手指南</dt>
+                        <dd>
+                            <p><a href="javascript:;">账户注册</a></p>
+                            <p><a href="javascript:;">购物流程</a></p>
+                            <p><a href="javascript:;">订购方式</a></p>
+                            <p><a href="javascript:;">悠币说明</a></p>
+                            <p><a href="javascript:;">会员等级</a></p>
+
+                        </dd>
+                    </dl>
+                    <dl class="col2">
+                        <dt>付款方式</dt>
+                        <dd>
+                            <p><a href="javascript:;">支付方式</a>/<a href="javascript:;">发票说明</a></p>
+                            <p><a href="javascript:;">充值说明</a>/<a href="javascript:;">储值卡说明</a></p>
+                            <p><a href="javascript:;">优惠代码/礼品卡说明</a></p>
+                            <p><a href="javascript:;">卡券购买章程</a></p>
+                        </dd>
+                    </dl>
+                    <dl class="col3">
+                        <dt>配送方式</dt>
+                        <dd>
+                            <p><a href="javascript:;">配送运费</a></p>
+                            <p><a href="javascript:;">配送范围</a></p>
+                            <p><a href="javascript:;">配送时间</a></p>
+                        </dd>
+                    </dl>
+                    <dl class="col4">
+                        <dt>售后服务</dt>
+                        <dd>
+                            <p><a href="javascript:;">退换货政策</a></p>
+                            <p><a href="javascript:;">退换货流程</a></p>
+                            <p><a href="javascript:;">常见问题</a></p>
+                            <p><a href="javascript:;">投诉与建议</a></p>
+                        </dd>
+                    </dl>
+                    <dl class="col5">
+                        <dt>关于我们</dt>
+                        <dd>
+                            <p><a href="javascript:;">公司介绍</a></p>
+                            <p><a href="javascript:;">联系我们</a></p>
+                            <p><a href="javascript:;">业务合作</a></p>
+                            <p><a href="javascript:;">诚信举报</a></p>
+                            <p><a href="javascript:;" target="_blank">人才招聘</a></p>
+                            <p><a href="javascript:;">友情链接</a></p>
+
+                        </dd>
+                    </dl>
+                    <div class="service"><span>客服热线 400-000-7788 企业采购或团购，请转2号键咨询</span><span>周一至周日 9:00-21:00</span></div>
+                    <div class="copyright">
+                        <p>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
+                        <p> <a href="javascript:;" target="_blank" rel="nofollow">沪ICP备09008015号 </a> Copyright © 2005-2018 <a href="javascript:;">上海易果电子商务有限公司</a>版权所有</p>
+                        <p class="authentication">
+                            <a href="javascript:;" target="_blank" rel="nofollow"><img src="http://img05.yiguoimg.com/e/web/160420/01632/141253/2517491005058doc.png" height="47"></a>
+                            <a href="javascript:;" target="_blank"><img src="http://img03.yiguo.com/images/footer_copy.gif" width="47px" height="47px"></a>
+                            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002" style="display: inline-block; text-decoration: none; height: 20px; line-height: 20px;">
+                                <img src="http://www.beian.gov.cn/file/ghs.png" style="float: left;">
+                                <span style="float: left; height: 20px; line-height: 20px; margin: 0px 0px 0px 5px; color: #939393;">沪公网安备 31010502000002号</span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
