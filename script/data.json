@@ -1,0 +1,133 @@
+{
+    "goodsList": [{
+
+            "title": "海天下阿根廷凤尾",
+            "id": 1,
+            "img": "http://img14.yiguoimg.com/d/items/2018/180903/9288730522461475_300.jpg",
+            "price": 55.90
+        },
+        {
+
+            "title": "多力多滋超浓芝士味",
+            "id": 2,
+            "img": "http://img12.yiguoimg.com/e/items/2017/170503/9288707322487459_300.jpg",
+            "price": 25.90
+        },
+        {
+            "title": "蓝雪阿根廷",
+            "id": 3,
+            "img": "http://img14.yiguoimg.com/d/items/2018/180807/9288727888798983_300.jpg",
+            "price": 288.00
+        },
+        {
+            "id": 4,
+            "title": "智能平板兼有跑步机家用功能的Runingpad健走机小型迷你静音全折叠室内健身器材【抖音同款】 旗舰版科技银 智能APP 上楼免安装",
+            "img": "//img12.360buyimg.com/jdcms/s170x170_jfs/t1/5746/7/3991/399510/5b9b1e3aE6ad7392c/fbd31dd5b91fe29c.jpg",
+            "price": 1099.00
+        },
+        {
+            "id": 5,
+            "title": "联想（Lenovo） 小新潮7000 15.6英寸笔记本电脑酷睿i5/i7轻薄本商务办公本固态游戏本 i5-8250U 2G独显 银色 正版WIN10+Office2016",
+            "img": "//img12.360buyimg.com/jdcms/s170x170_jfs/t1/4994/14/8781/236207/5baaf5b3Ec9104beb/fa4632d19f14df35.jpg",
+            "price": 499.00
+        },
+        {
+            "id": 6,
+            "title": "木成 达芬奇密码锁筒配魔戒520七夕情人节礼物送女友创意生日礼品女生男友女朋友男朋友老婆爱人七夕礼物",
+            "img": "//img11.360buyimg.com/jdcms/s170x170_jfs/t2953/73/1366528388/398830/8ea907a6/577f0defN45e9969b.jpg",
+            "price": 188.00
+        },
+        {
+            "type": 1,
+            "id": 7,
+            "title": "【买2减10】海外直邮 日本Freeplus芙丽芳丝洗面奶男女 净润洁面啫喱 氨基酸泡沫洗面奶100g 一支装",
+            "img": "//img11.360buyimg.com/jdcms/s170x170_jfs/t27250/355/157617451/84572/28f07dc4/5b87541dNb32e209a.jpg",
+            "price": 95.00
+        },
+        {
+            "type": 1,
+            "id": 8,
+            "title": "【小米生态链企业出品】WalkingPad走步机A1 家用静音智能走步机（非跑步机）ZS",
+            "img": "//img10.360buyimg.com/jdcms/s170x170_jfs/t20113/240/1671560005/148362/38d8d92d/5b21ce8bN34eb8b16.jpg",
+            "price": 1999.00
+        },
+        {
+            "type": 1,
+            "id": 9,
+            "title": "富安德 生日礼物女生老婆送女友女朋友教师节情侣实用创意礼品抖音同款100一百种我爱你语言项链婚礼礼物 【双层礼盒】·一诺一世（支持定制）-玫瑰金",
+            "img": "//img12.360buyimg.com/jdcms/s170x170_jfs/t22408/26/2419361086/270925/58d86617/5b56f187N83a1c9ee.jpg",
+            "price": 218.00
+        },
+        {
+            "type": 2,
+            "id": 10,
+            "title": "",
+            "img": "//img1.360buyimg.com/pop/s230x306_jfs/t26464/301/494609277/39908/1c9dc2c3/5baf3f19Nc0c75cc7.jpg",
+            "price": 0.00
+        },
+        {
+            "type": 2,
+            "title": "",
+            "id": 11,
+            "img": "//img1.360buyimg.com/pop/s230x306_jfs/t1/5808/25/1771/36086/5b94e165E40466bd6/7132306d0cac909e.jpg",
+            "price": 0.00
+        },
+        {
+            "type": 1,
+            "id": 12,
+            "title": "竞怡（JINGYI）磁悬浮地球仪 生日礼物送男友女友女生创意礼品毕业教师节送老师同学实用公司商务纪念品奖品",
+            "img": "//img10.360buyimg.com/jdcms/s170x170_jfs/t17503/279/2223567414/406003/8bcbc202/5aeaaf8cN9f66f169.jpg",
+            "price": 149.00
+        },
+        {
+            "type": 1,
+            "id": 13,
+            "title": "芙丽芳丝（freeplus）保湿修护清爽乳液100ml（乳液面霜 补水保湿 修护肌肤 清爽水润 敏感肌适用）",
+            "img": "//img10.360buyimg.com/jdcms/s170x170_jfs/t22705/44/2588118515/94132/db2e2238/5b86202aNd1d78bab.jpg",
+            "price": 225.00
+        }, {
+            "type": 1,
+            "id": 14,
+            "title": "✅心相悦 生日礼物男生女生实用送朋友老婆送老公男朋友女朋友闺蜜 中秋商务中秋节送父母创意礼品 亚光黑400ml+免费刻字+豪华礼盒套装",
+            "img": "//img12.360buyimg.com/jdcms/s170x170_jfs/t22915/40/1931797273/359665/8c914e7a/5b6ea00cN4f01b20d.jpg",
+            "price": 179.00
+        }, {
+            "type": 1,
+            "id": 15,
+            "title": "唯一（Winy）银项链女士四叶草情侣锁骨链999足银吊坠时尚银首饰品简约日韩版配证书 悦朵项链",
+            "img": "//img30.360buyimg.com/jdcms/s170x170_jfs/t25405/172/1268464493/285831/52eb34c6/5b90d5e7Nf98bd897.jpg",
+            "price": 139.00
+        }, {
+            "type": 1,
+            "id": 16,
+            "title": "奢蒂 S999纯银项链女锁骨简约银饰四叶草吊坠刻字首饰品生日情人节礼物送女友老婆 项链一条",
+            "img": "//img11.360buyimg.com/jdcms/s170x170_jfs/t26602/124/351217464/177677/66e2bbd7/5b8f4a4bN6edba04a.jpg",
+            "price": 269.00
+        }, {
+            "type": 1,
+            "id": 17,
+            "title": "物有物语 木梳定制 送女友女生刻字黑檀木梳镜子礼盒套装创意生日礼物送老婆妈妈闺蜜实用 木梳两款+镜子（可印照片）",
+            "img": "//img11.360buyimg.com/jdcms/s170x170_jfs/t24826/201/1394852035/383015/d53ce38d/5baf2395Nbbd4118f.jpg",
+            "price": 198.00
+        }, {
+            "type": 1,
+            "id": 18,
+            "title": "半悟 生日礼物女生男生七夕送男朋友女朋友创意流香沙漏送爸爸妈妈同事同学感恩礼品 竹木款-仙亭创意烟雾沙漏 创意沙漏",
+            "img": "//img12.360buyimg.com/jdcms/s170x170_jfs/t22141/61/1999354165/512043/8557fc0a/5b409ac8N450fa636.jpg",
+            "price": 186.00
+        }, {
+            "type": 2,
+            "id": 19,
+            "title": "",
+            "img": "//img1.360buyimg.com/pop/s230x306_jfs/t23275/203/2282773046/86681/bdb22fdb/5b78e543N7c8dfaff.jpg",
+            "price": 0.00
+        }, {
+            "type": 1,
+            "id": 20,
+            "title": "雪肌精SEKKISEI黄金水乳雪肌礼盒(化妆水180ml+乳液130ml+纸膜15粒+4件套 保湿 滋养)",
+            "img": "//img10.360buyimg.com/jdcms/s170x170_jfs/t1/5247/22/3291/191754/5b98e7c2E48534d2b/ee9e59be0d6a9095.jpg",
+            "price": 499.00
+        }
+
+    ]
+}
