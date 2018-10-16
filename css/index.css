@@ -343,6 +343,7 @@ a {
     width: 22px;
     background-position: -147px 0; }
   #header .fr .con {
+    z-index: 2;
     display: none;
     position: absolute;
     top: 30px;
@@ -357,6 +358,12 @@ a {
       line-height: 25px; }
     #header .fr .mobile .tit i {
       background-position: -64px 0; }
+    #header .fr .mobile:hover s {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform: rotate(180deg); }
   #header .fr .tit a {
     display: block;
     float: left;
@@ -391,6 +398,12 @@ a {
         -webkit-border-radius: 16px;
         -moz-border-radius: 16px;
         border-radius: 16px; }
+    #header .fr .myyiguo:hover s {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform: rotate(180deg); }
   #header .fr li a s {
     position: absolute;
     top: 13px;
@@ -458,7 +471,7 @@ a {
     #search .wrap .shopping-cart {
       float: right;
       position: relative;
-      z-index: 5; }
+      z-index: 1; }
       #search .wrap .shopping-cart .shopping-btn {
         width: 170px;
         height: 28px;
@@ -571,7 +584,7 @@ a {
       _padding: 11px 0; }
 
 #nav .catalogs-list {
-  display: none;
+  display: block;
   position: absolute;
   height: 462px;
   background: rgba(255, 255, 255, 0.9);
@@ -664,33 +677,96 @@ a {
   #nav .catalogs-list .current h3 s {
     display: block; }
 
-#nav .block {
-  display: block !important; }
-
 #banner {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 500px;
   top: -38px; }
-  #banner ul {
+  #banner .b-img {
     width: 100% !important;
     margin: 0 auto;
     position: relative;
     height: 500px; }
-    #banner ul li {
+    #banner .b-img li {
       overflow: hidden;
       width: 100% !important;
       height: 500px;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
       background: #efefef;
       position: absolute;
       width: 1349px;
       left: 0px;
       top: 0px;
-      display: list-item; }
-      #banner ul li a {
+      display: none; }
+      #banner .b-img li a {
         display: block;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        background: url(../images/banner1.jpg);
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        -webkit-transform: scaleX(1.1) scaleY(1.1);
+        -ms-transform: scaleX(1.1) scaleY(1.1);
+        -o-transform: scaleX(1.1) scaleY(1.1);
+        -moz-transform: scaleX(1.1) scaleY(1.1);
+        transform: scaleX(1.1) scaleY(1.1);
+        -webkit-transition: transform 3s linear;
+        -ms-transition: transform 3s linear;
+        -o-transition: transform 3s linear;
+        -moz-transition: transform 3s linear;
+        transition: transform 3s linear; }
+    #banner .b-img .current {
+      display: list-item; }
+    #banner .b-img .current a {
+      -webkit-transform: scaleX(1) scaleY(1);
+      -ms-transform: scaleX(1) scaleY(1);
+      -o-transform: scaleX(1) scaleY(1);
+      -moz-transform: scaleX(1) scaleY(1);
+      transform: scaleX(1) scaleY(1); }
+    #banner .b-img .l2 a {
+      background: url(../images/banner2.jpg); }
+    #banner .b-img .l3 a {
+      background: url(../images/banner3.jpg); }
+  #banner .b-btn {
+    z-index: 2; }
+    #banner .b-btn a {
+      display: none;
+      width: 40px;
+      height: 100px;
+      background: url(../images/slider-btn.png) no-repeat;
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      opacity: 0.3; }
+      #banner .b-btn a:hover {
+        opacity: 0.7; }
+    #banner .b-btn .prev {
+      left: 0;
+      background-position: top left; }
+    #banner .b-btn .next {
+      right: 0;
+      background-position: top right; }
+  #banner:hover .b-btn a {
+    display: block; }
+  #banner .b-dot {
+    position: absolute;
+    bottom: 12px;
+    left: 43%;
+    height: 12px;
+    zoom: 1;
+    z-index: 3; }
+    #banner .b-dot li {
+      overflow: hidden;
+      float: left;
+      width: 12px;
+      height: 12px;
+      line-height: 10px;
+      color: #b5b2a8;
+      background: #b5b2a8;
+      margin: 0 5px;
+      border-radius: 50%;
+      cursor: pointer;
+      text-indent: 100000000px; }
+      #banner .b-dot li.on {
+        color: #5aaa16;
+        background: #5aaa16; }
