@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login.css">
     <style>
-.tab-content .active {
+        .tab-content .active {
             display: block;
         }
         
@@ -38,8 +38,6 @@
         .register .field-name {
             float: left;
             display: inline-block;
-            *display: inline;
-            *zoom: 1;
             width: 220px;
             text-align: right;
             padding-right: 20px;
@@ -72,91 +70,155 @@
             height: 40px;
             border: 1px solid #c1c1c1;
             margin-right: 5px;
+            text-align: center;
         }
-    }
-    img {
-        border: none;
-    }
-    .input-phone,
-    .input-mail,
-    .input-key {
-        background-image: url(../images/bg_input.png);
-        background-repeat: no-repeat;
-    }
-    .input-phone {
-        background-position: 276px -30px;
-    }
-    .input-key {
-        background-position: 276px -70px;
-    }
-    .btn-yzm {
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        width: 121px;
-        height: 38px;
-        text-align: center;
-        line-height: 38px;
-        background-color: #f7f7f7;
-        border: 1px solid #c1c1c1;
-        /* color: #64b22a; */
         
-        margin-right: 20px;
-    }
-    input[type=checkbox] {
-        margin-right: 9px;
-        height: 14px;
-        width: 14px;
-        vertical-align: -1px;
-    }
-    .btn-green-l {
-        width: 306px;
-        display: inline-block;
-        height: 50px;
-        text-align: center;
-        color: #fff;
-        font: 18px/50px "Microsoft YaHei";
-    }
-    .btn-green-l:hover {
-        color: #fff;
-    }
-    .btn-green-l,
-    .btn-green-s {
-        background: #008842;
-    }
-    .register .fr {
-        position: relative;
-        height: 340px;
-        width: 330px;
-        text-align: center;
-        padding-top: 50px;
-        font: 14px/56px "Microsoft YaHei";
-    }
-    .register .fr .rimg {
-        position: absolute;
-        left: -140px;
-        top: 70px;
-    }
-    .right {
-        position: absolute;
-        top: -27px;
-        right: 0;
-        font: 14px/1 "Microsoft YaHei";
-        text-align: right;
-    }
-    .right .orange {
-        margin-right: 36px;
-        color: #ef760a;
-        text-decoration: underline;
-    }
-}
+        img {
+            border: none;
+        }
+        
+        .input-phone,
+        .input-mail,
+        .input-key {
+            background-image: url(../images/bg_input.png);
+            background-repeat: no-repeat;
+        }
+        
+        .input-phone {
+            background-position: 276px -30px;
+        }
+        
+        .input-key {
+            background-position: 276px -70px;
+        }
+        
+        .btn-yzm {
+            display: inline-block;
+            width: 121px;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            background-color: #f7f7f7;
+            border: 1px solid #c1c1c1;
+            /* color: #64b22a; */
+            margin-right: 20px;
+        }
+        
+        input[type=checkbox] {
+            margin-right: 9px;
+            height: 14px;
+            width: 14px;
+            vertical-align: -1px;
+        }
+        
+        .btn-green-l {
+            width: 306px;
+            display: inline-block;
+            height: 50px;
+            text-align: center;
+            color: #fff;
+            font: 18px/50px "Microsoft YaHei";
+        }
+        
+        .btn-green-l:hover {
+            color: #fff;
+        }
+        
+        .btn-green-l,
+        .btn-green-s {
+            background: #008842;
+        }
+        
+        .register .fr {
+            position: relative;
+            height: 340px;
+            width: 330px;
+            text-align: center;
+            padding-top: 50px;
+            font: 14px/56px "Microsoft YaHei";
+        }
+        
+        .register .fr .rimg {
+            position: absolute;
+            left: -100px;
+            top: 70px;
+        }
+        
+        .right {
+            position: absolute;
+            top: -27px;
+            right: 0;
+            font: 14px/1 "Microsoft YaHei";
+            text-align: right;
+        }
+        
+        .right .orange {
+            margin-right: 36px;
+            color: #ef760a;
+            text-decoration: underline;
+        }
+        
+        .pass-error em {
+            color: #f60000;
+        }
+        
+        p .error {
+            float: left;
+            display: inline-block;
+            line-height: 38px;
+        }
+        
+        #error {
+            float: left;
+            display: inline-block;
+            line-height: 38px;
+        }
+        
+        #error em {
+            color: #f60000;
+        }
+        
+        .error em {
+            color: #888;
+        }
+        
+        .pass-error i {
+            background-image: url(images/bg_login.png);
+            background-position: -40px -200px;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            vertical-align: middle;
+            margin-right: 9px;
+        }
+        
+        .pass-succ i {
+            background-image: url(images/bg_login.png);
+            background-position: -40px -200px;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            vertical-align: middle;
+            margin-right: 9px;
+            background-position: 0 -200px;
+        }
+        
+        .pass-tip i {
+            background-image: url(images/bg_login.png);
+            background-position: -40px -200px;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            vertical-align: middle;
+            margin-right: 9px;
+            background-position: -20px -200px;
+        }
     </style>
     <title>Document</title>
 </head>
 
 <body>
     <div class="w">
-
         <!------- 顶部工具栏结束 ------->
         <div class="header clearfix">
             <div class="wrap">
@@ -174,105 +236,52 @@
                             <div class="fl">
                                 <p class="clearfix" style="line-height:38px;">
                                     <span class="field-name" style="float:left;">图形验证码</span>
-                                    <input type="text" id="verficode_tab1" placeholder="图形验证码" class="input input-yzm" style="float:left;">
-                                    <strong style="float:left;"></strong><a href="javascript:void(0)" class="gray" style="float:left;line-height:38px;">换一张</a>
-                                    <span></span>
+                                    <input type="text" id="verficode" placeholder="图形验证码" class="input input-yzm" style="float:left;">
+                                    <strong style="float:left;" id="writecode"></strong><a href="javascript:void(0)" id="other" class="gray" style="float:left;line-height:38px;">换一张</a>
+                                    <span class="error"> <i></i><em></em></span>
                                 </p>
-                                <p>
+                                <p class="clearfix">
                                     <span class="field-name">手机号</span>
-                                    <input class="input input-phone" id="Phone_Mobile" name="Phone_Mobile" placeholder="请输入您的手机号" type="text" value="">
-                                    <span></span>
+                                    <input class="input input-phone" id="Phone" name="Phone" placeholder="请输入您的手机号" type="text" value="">
+                                    <span class="error"><i></i><em></em></span>
                                 </p>
-                                <p>
+                                <p class="clearfix">
                                     <span class="field-name">手机验证码</span>
-                                    <input class="input input-yzm" id="Phone_VerifyCode" name="Phone_VerifyCode" placeholder="手机验证码" type="text" value="">
-                                    <a href="javascript:void(0)" class="btn-yzm" id="Phone_SendCode">获取验证码</a>
-                                    <span></span>
+                                    <input class="input input-yzm" id="VerifyCode" name="VerifyCode" placeholder="手机验证码" type="text" value="9999">
+                                    <a href="javascript:void(0)" class="btn-yzm" id="SendCode">获取验证码</a>
+                                    <span class="error"><i></i><em></em></span>
                                 </p>
-                                <p>
+                                <p class="clearfix">
                                     <span class="field-name">设置密码</span>
-                                    <input class="input input-key" id="Phone_Password" name="Phone_Password" placeholder="6-20位字母、符号或数字" type="password">
-                                    <span></span>
+                                    <input class="input input-key" id="Password" name="Password" placeholder="6-20位字母、符号或数字" type="password">
+                                    <span class="error"><i></i><em></em></span>
                                 </p>
-                                <p>
+                                <p class="clearfix">
                                     <span class="field-name">确认密码</span>
-                                    <input class="input input-key" id="Phone_ConfimPassword" name="Phone_ConfimPassword" placeholder="再次输入密码" type="password">
-                                    <span></span>
+                                    <input class="input input-key" id="ConfimPassword" name="ConfimPassword" placeholder="再次输入密码" type="password">
+                                    <span class="error"><i></i><em></em></span>
                                 </p>
-                                <p>
-                                    <span class="field-name">邀请码</span>
-                                    <input class="input input-key" id="Phone_AtCode" name="Phone_AtCode" placeholder="邀请码" type="text" value="">
-                                    <span></span>
+                                <p class="clearfix">
+                                    <span class="field-name">用户名</span>
+                                    <input class="input input-key" id="Username" name="Username" placeholder="请输入用户名" type="text" value="">
+                                    <span id="error" calss="error"><i></i><em></em></span>
                                 </p>
-                                <p>
+                                <p class="clearfix">
                                     <span class="field-name" style="height:1px;"></span><label><input type="checkbox" id="tab1chk" checked="checked">我已阅读并同意<a href="javascript:void(0)" class="green btn-protocol">《易果服务协议》</a><span></span></label>
                                     <input id="DeviceId" name="DeviceId" type="hidden" value="">
                                 </p>
-                                <span></span>
                                 <p><span class="field-name" style="height:1px;"></span><a href="javascript:void(0)" class="btn-green-l" id="PhoneReg">立即注册</a></p>
                             </div>
                             <div class="fr">
                                 <div class="rimg"><img src="http://img06.yiguoimg.com/e/web/161205/01853/142855/register.png"></div>
-
-
                             </div>
                         </div>
                     </div>
                     <div class="right">
                         我已经注册，现在就 <a class="orange" href="/">登录</a>
-
                     </div>
                 </div>
             </div>
-            <!--<div class="tab-pane clearfix" id="tab2">
-                    <div class="fl">
-                        <p>
-                            <span class="field-name">图形验证码</span>
-                            <input type="text" id="verficode_tab2" placeholder="图形验证码" class="input input-yzm" />
-                            <span></span>
-                        </p>
-                        <p>
-                            <span class="field-name">邮箱</span>
-                            <input class="input input-mail" id="Email" name="Email" placeholder="请输入您的邮箱" type="text" value="" />
-                            <span></span>
-                        </p>
-                        <p>
-                            <span class="field-name">设置密码</span>
-                            <input class="input input-key" id="Email_Password" name="Email_Password" placeholder="6-20位字母、符号或数字" type="password" />
-                            <span></span>
-                        </p>
-                        <p>
-                            <span class="field-name">确认密码</span>
-                            <input class="input input-key" id="Email_ConfimPassword" name="Email_ConfimPassword" placeholder="再次输入密码" type="password" />
-                            <span></span>
-                        </p>
-                        <p>
-                            <span class="field-name">手机号</span>
-                            <input class="input input-phone" id="Email_Mobile" name="Email_Mobile" placeholder="请输入您的手机号" type="text" value="" />
-                            <span></span>
-                        </p>
-                        <p>
-                            <span class="field-name">手机验证码</span>
-                            <input class="input input-yzm" id="Email_VerifyCode" name="Email_VerifyCode" placeholder="手机验证码" type="text" value="" />
-                            <a href="javascript:void(0)" class="btn-yzm" id="Email_SendCode">获取验证码</a>
-                            <span></span>
-                        </p>
-                        <p>
-                            <span class="field-name">邀请码</span>
-                            <input class="input input-key" id="Email_AtCode" name="Email_AtCode" placeholder="邀请码" type="text" value="" />
-                            <span></span>
-                        </p>
-                        <p>
-                            <span class="field-name"></span><label><input type="checkbox" id="tab2chk" checked="checked" />我已阅读并同意<a href="javascript:void(0)" class="green btn-protocol">《易果服务协议》</a><span></span></label>
-                        </p>
-                        <p><span class="field-name"></span><a href="javascript:void(0)" class="btn-green-l" id="EmailReg">立即注册</a></p>
-                    </div>
-                    <div class="fr">
-                    
-                        
-                    </div>
-                </div>-->
-
         </div>
         <!------- 页尾开始 ------->
         <div id="footer">
@@ -355,7 +364,7 @@
                         <p> <a href="javascript:;" target="_blank" rel="nofollow">沪ICP备09008015号 </a> Copyright © 2005-2018 <a href="javascript:;">上海易果电子商务有限公司</a>版权所有</p>
                         <p class="authentication">
                             <a href="javascript:;" target="_blank" rel="nofollow"><img src="http://img05.yiguoimg.com/e/web/160420/01632/141253/2517491005058doc.png" height="47"></a>
-                            <a href="javascript:;" target="_blank"><img src="http://img03.yiguo.com/images/footer_copy.gif" width="47px" height="47px"></a>
+                            <a href="javascript:;" target="_blank"><img src="images/footer_copy.gif" width="47px" height="47px"></a>
                             <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002" style="display: inline-block; text-decoration: none; height: 20px; line-height: 20px;">
                                 <img src="http://www.beian.gov.cn/file/ghs.png" style="float: left;">
                                 <span style="float: left; height: 20px; line-height: 20px; margin: 0px 0px 0px 5px; color: #939393;">沪公网安备 31010502000002号</span></a>
@@ -368,3 +377,190 @@
 </body>
 
 </html>
+<script src="script/jquery-3.3.1.js"></script>
+<script src="script/ajax.js"></script>
+<script>
+    console.log(username);
+    var password = document.getElementById("Password");
+    var surepsd = document.getElementById("ConfimPassword");
+    var other = document.getElementById("other");
+    var verficode = document.getElementById("verficode");
+    var code = document.getElementById("writecode");
+    var btn = document.getElementById("PhoneReg");
+    var error = $(".error");
+    var phone = document.getElementById("Phone");
+    var error1 = $("#error");
+    var username = document.getElementById("Username");
+    var brr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+        "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
+        "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "6", "7", "8", "9"
+    ];
+    var str = "";
+    console.log(error);
+    other.onclick = function() {
+            str = "";
+            for (var i = 0; i < 4; i++) {
+                var temp = Math.round(randomInt(brr.length - 1, 0));
+                str += brr[temp];
+            }
+            code.innerHTML = str;
+        }
+        //随机数
+    function randomInt(max, min) {
+        return min + Math.round((max - min) * Math.random())
+    }
+    var num = 0;
+    var arr = [];
+    //用户名验证
+    username.onfocus = function() {
+        error1[0].lastElementChild.innerHTML = "支持中文, 字母,符号的组合, 4-20个字符";
+    }
+    username.onblur = function() {
+            var reg = /^[\u4e00-\u9fa5]{4,20}|[A-z0-9\-\_]{4,20}$/
+            if (username.value.length < 4 || username.value.length > 20) {
+                //长度不对
+                error1[0].className = "error pass-tip";
+                error[0].lastElementChild.innerHTML = "长度只能在4~20个字符之间";
+                arr[5] = 1;
+            } else if (!reg.test(username.value)) {
+                // 有特殊字符	
+                error1[0].className = "error pass-error";
+                error1[0].lastElementChild.innerHTML = "格式错误, 仅支持中文, 字母, 数字,符号的组合";
+                arr[5] = 1;
+            } else {
+                error1[0].lastElementChild.innerHTML = "";
+                error1[0].className = "error pass-succ";
+                arr[5] = 0;
+            }
+        }
+        //手机号：
+    phone.onfocus = function() {
+        this.parentElement.style.borderColor = "#999";
+        error[1].style.color = "#c5c5c5";
+        console.log(error[1].lastElementChild);
+        error[1].lastElementChild.innerHTML = "11位手机号";
+    }
+    var num = 0;
+    phone.onblur = function() {
+            var str = this.value;
+            if (str != "") {
+                var reg = /^\d{11}$/;
+                if (reg.test(str)) {
+                    error[1].lastElementChild.innerHTML = ""
+                    error[1].className = "error pass-succ";
+                    arr[1] = 0;
+                } else {
+                    error[1].className = "error pass-error";
+                    error[1].lastElementChild.innerHTML = "输入错误";
+                    arr[1] = 1;
+                }
+            } else {
+                error[1].className = "error pass-tip";
+                error[1].lastElementChild.innerHTML = "手机号不能为空";
+            }
+        }
+        //密码由6~20位字母、数字或半角符号组成，不能是10为以下重数字/字母/半角符号,字母需区分大小写
+    password.onfocus = function() {
+
+        this.parentElement.style.borderColor = "#999";
+        error[3].style.color = "#c5c5c5";
+        error[3].lastElementChild.innerHTML = "建议使用字母, 数字和符号组合6-20个字符";
+    }
+    password.onblur = function() {
+            var reg = /^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S{6,20}$/;
+            if (password.value.length < 6 || password.value.length > 20) {
+                //长度不对
+                error[3].className = "error pass-tip";
+                error[3].lastElementChild.innerHTML = "长度只能在6~20个字符之间";
+                arr[3] = 1;
+            } else if (!reg.test(password.value)) {
+                // 有特殊字符	
+                error[3].className = "error pass-error"
+                error[3].lastElementChild.innerHTML = "建议使用字母, 数字和符号两种及以上组合";
+                arr[3] = 1;
+            } else {
+                error[3].className = "error pass-succ"
+                error[3].lastElementChild.innerHTML = "";
+                arr[3] = 0;
+            }
+
+        }
+        //密码确认
+    surepsd.onfocus = function() {
+        this.parentElement.style.borderColor = "#999";
+        error[4].style.color = "#c5c5c5";
+        error[4].lastElementChild.innerHTML = "请再次输入密码";
+    }
+    surepsd.onblur = function() {
+            if (surepsd.value != password.value) {
+                error[4].className = "error pass-error"
+                error[4].lastElementChild.innerHTML = "两次输入的密码不一致";
+                arr[4] = 1;
+            } else {
+                arr[4] = 0;
+                error[4].className = "error pass-succ"
+                error[4].lastElementChild.innerHTML = "";
+            }
+        }
+        //验证码
+    verficode.onfocus = function() {
+        error[0].lastElementChild.innerHTML = "看不清? 点击更换验证码";
+    }
+    verficode.onblur = function() {
+        if (verficode.value != str) {
+            error[0].className = "error pass-tip"
+            error[0].lastElementChild.innerHTML = "验证码输入错误";
+            arr[0] = 1;
+        } else {
+            arr[0] = 0;
+            error[0].lastElementChild.innerHTML = "";
+            error[0].className = "error pass-succ"
+        }
+    }
+    arr[2] = 0;
+    btn.onclick = function() {
+        for (var i = 0; i < arr.length; i++) {
+            num += arr[i];
+        }
+        if (num > 0) {
+            alert("输入错误或有未填写的项");
+            num = 0;
+            return 0;
+        }
+        // console.log(`username=${username.value}&password=${password.value}`);
+        // var url = "http://localhost:8888/proxy/localhost/test/kaola/dist/php/register.php";
+        // ajaxPost(url, `username=${username.value}&password=${password.value}`)
+        //     .then(function(res) {
+        //         if (res == "注册成功") {
+        //             console.log(res);
+        //             document.cookie = "username=" + username.value;
+        //             // location.href = "register2.html";
+
+        //         } else {
+        //             alert(res);
+        //             return 0;
+        //         }
+        //     })
+        var opt = {
+            url: "http://localhost:8888/proxy/localhost/test/kaola/dist/php/register.php",
+            type: "Post",
+            data: {
+                username: username.value,
+                password: password.value
+            }
+
+        }
+        $.ajax(opt)
+            .then(function(res) {
+                if (res == "注册成功") {
+                    console.log(res);
+                    document.cookie = "username=" + username.value;
+                    // location.href = "register1.html";
+
+                } else {
+                    alert(res);
+                    return 0;
+                }
+            })
+    }
+</script>
