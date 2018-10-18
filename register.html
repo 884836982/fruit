@@ -527,40 +527,40 @@
             num = 0;
             return 0;
         }
-        // console.log(`username=${username.value}&password=${password.value}`);
-        // var url = "http://localhost:8888/proxy/localhost/test/kaola/dist/php/register.php";
-        // ajaxPost(url, `username=${username.value}&password=${password.value}`)
-        //     .then(function(res) {
-        //         if (res == "注册成功") {
-        //             console.log(res);
-        //             document.cookie = "username=" + username.value;
-        //             // location.href = "register2.html";
-
-        //         } else {
-        //             alert(res);
-        //             return 0;
-        //         }
-        //     })
-        var opt = {
-            url: "http://localhost:8888/proxy/localhost/test/kaola/dist/php/register.php",
-            type: "Post",
-            data: {
-                username: username.value,
-                password: password.value
-            }
-
-        }
-        $.ajax(opt)
+        console.log(`username=${username.value}&password=${password.value}`);
+        var url = "http://localhost:8888/proxy/localhost/test/kaola/dist/php/register.php";
+        ajaxPost(url, `username=${username.value}&password=${password.value}`)
             .then(function(res) {
                 if (res == "注册成功") {
                     console.log(res);
                     document.cookie = "username=" + username.value;
-                    // location.href = "register1.html";
+                    location.href = "register1.html";
 
                 } else {
                     alert(res);
                     return 0;
                 }
             })
+            // var opt = {
+            //     url: "http://localhost:8888/php/register.php",
+            //     type: "Post",
+            //     data: {
+            //         username: "${username.value}",
+            //         password: "${password.value}"
+            //     }
+
+        // }
+        // $.ajax(opt)
+        //     .then(function(res) {
+        //         if (res == "注册成功") {
+        //             console.log(res);
+        //             document.cookie = "username=" + username.value;
+        //             // location.href = "register1.html";
+
+        //         } else {
+        //             alert(res);
+        //             return 0;
+        //         }
+        //     })
     }
 </script>

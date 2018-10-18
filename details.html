@@ -364,17 +364,17 @@
                 <div id="film"></div>
                 <!--框-->
                 <div id="frame"></div>
-                <img src="http://img11.yiguoimg.com/d/items/2018/180625/9288725028349145_500.jpg" alt="" />
+                <img src="" alt="" />
             </div>
             <div id="big">
-                <img src="http://img11.yiguoimg.com/d/items/2018/180625/9288725028349145_500.jpg" />
+                <img src="" />
             </div>
         </div>
         <div class="bottom">
             <div class="product-info">
                 <div class="summary-name">
-                    <h1>澳大利亚脐橙10个约180g/个</h1>
-                    <p>甜美鲜橙 皮薄宜剥</p>
+                    <h1></h1>
+
                     <input type="hidden" name="CommodityId" id="CommodityId" value="17010f52-6468-48cd-a906-6cb0e1a6323b">
                 </div>
 
@@ -382,7 +382,7 @@
                     <div class="pro-price">
                         <div>
                             <span class="tt">价格：</span>
-                            <span><em>¥</em><strong>84.80</strong></span>
+                            <span><em>¥</em><strong></strong></span>
                         </div>
                     </div>
                 </div>
@@ -539,5 +539,32 @@
         oBigImg.style.left = -nLeft * propX + "px";
         oBigImg.style.top = -nTop * propY + "px";
 
+    }
+
+    function json() {
+        var opt = {
+            url: "http://localhost:8888/proxy/script/data.json",
+            type: "GET",
+            context: this
+        }
+        return $.ajax(opt);
+    }
+    var data = '';
+    if (data = $.cookie("goodsId")) {
+        json()
+            .then(function(res) {
+                console.log(res);
+                var ali = res.goodsList;
+                for (var i = 0; i < ali.length; i++) {
+                    if (data == ali[i].id) {
+                        $("#small img").attr("src", ali[i].img);
+                        $("#big img").attr("src", ali[i].img);
+                        $(".summary-name h1").html(ali[i].title);
+                        $(".pro-price strong").html(ali[i].price);
+                        return;
+                    }
+
+                }
+            })
     }
 </script>

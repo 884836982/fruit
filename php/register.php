@@ -3,6 +3,7 @@
     //从前端拿来数据；
     $username = @$_POST["username"];
     $password = @$_POST["password"];
+    die(@$_POST["password"]);
     if($username == "" || $password == ""){
         die("参数不全");
     }

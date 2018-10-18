@@ -248,17 +248,34 @@ $(document).scroll(function() {
                 display: "none"
             })
         }
+        if (scrollTop >= 700) {
+            $(".floor-guide").css({
+                display: "block"
+            })
+            $.each($(".floor"), function(index, items) {
+                if (scrollTop > arguments[1].offsetTop) {
+                    $(".floor-guide a").eq(index).addClass("current").siblings("a").removeClass("current");
+                }
+            })
+        } else {
+            $(".floor-guide").css({
+                display: "none"
+            })
+        }
     })
     //购物车
+var totlePrice = 0
+
 function ShopCar() {}
 $.extend(ShopCar.prototype, {
     init: function() {
         this.main = $("#goods ul");
         this.timer = null;
+
         this.loadJson()
             .then(function(res) {
-                this.json = res.goodsList;
                 console.log(res);
+                this.json = res.list;
                 console.log(this.json);
                 this.renderPage()
             })
@@ -267,8 +284,12 @@ $.extend(ShopCar.prototype, {
     },
     loadJson: function() {
         var opt = {
-            url: "http://localhost:8888/proxy/script/data.json",
+            url: "http://localhost:8888/proxy/shop.juanpi.com/gsort?key=pcshouye&type=1&zhouyi_ids=p1_c4_l4_0",
             type: "GET",
+            data: {
+                page: this.page
+            },
+            datatype: "json",
             context: this
         }
         return $.ajax(opt);
@@ -277,10 +298,10 @@ $.extend(ShopCar.prototype, {
         console.log(this.json);
         var html = "";
         for (var i = 0; i < this.json.length; i++) {
-            html += ` <li class="product_item j_product current">
+            html += ` <li class="product_item j_product current" data-id=${this.json[i].goods_id}>
             <div class="p_img clearfix">
                 <a href="javascript:;" target="_blank">
-                    <img src="${this.json[i].img}" width="290" height="290" class="j_product_img">
+                    <img src="${this.json[i].pic_url}" width="290" height="290" class="j_product_img">
                 </a>
             </div>
             <div class="p_info clearfix">
@@ -291,14 +312,14 @@ $.extend(ShopCar.prototype, {
                         <font color="red">榴莲</font>班戟150g(6个)</a>
                 </div>
                 <div class="p_price">
-                    <span class="price"><strong>¥${this.json[i].price}</strong></span>
+                    <span class="price"><strong>¥${this.json[i].cprice}</strong></span>
 
                 </div>
             </div>
 
             <div class="p-buy">
                 <span></span>
-                <a class="btn-buy" href="javascript:;" data-id=${this.json[i].id}>加入购物车</a>
+                <a class="btn-buy" href="javascript:;" data-id=${this.json[i].goods_id}>加入购物车</a>
             </div>
         </li> `
         }
@@ -313,7 +334,7 @@ $.extend(ShopCar.prototype, {
                 display: "block"
             })
         })
-        
+
         // $(".shopping-btn").on("mouseleave", function() {
         //     clearTimeout(this.timer)
         //     this.timer = setTimeout(function(){
@@ -367,7 +388,6 @@ $.extend(ShopCar.prototype, {
         } else {
             $.cookie("shopCar", `[{"id":"${goodsId}","num":"1"}]`);
         }
-        console.log($.cookie("shopCar"));
         this.listSum();
     },
 
@@ -380,24 +400,23 @@ $.extend(ShopCar.prototype, {
             return 0;
         };
         var cookieArray = JSON.parse(cookie);
-        console.log(cookieArray);
         var html = "";
         for (var i = 0; i < cookieArray.length; i++) {
             for (var j = 0; j < this.json.length; j++) {
-                console.log(this.json[j].id, cookieArray[i].id);
                 if (cookieArray[i].id == this.json[j].id) {
+                    totlePrice += Number(cookieArray[i].num) * Number(this.json[j].cprice);
                     html += `<li data-id = ${cookieArray[i].id}><div class="l"><a href="http://www.yiguo.com/product/1356627.html" target="_blank">
-                    <img src="${this.json[j].img}" width="42" height="42"></a></div><div class="c">
-                <a href="http://www.yiguo.com/product/1356627.html">${this.json[j].title}</a></div><div class="r"><b>¥${this.json[j].price}</b> * ${cookieArray[i].num}<a href="javascript:;" onclick="remove(${cookieArray[i].id})">删除</a></div></li>`;
+                    <img src="${this.json[j].pic_url}" width="42" height="42"></a></div><div class="c">
+                <a href="http://www.yiguo.com/product/1356627.html">${this.json[j].title}</a></div><div class="r"><b>¥${this.json[j].cprice}</b> * ${cookieArray[i].num}<a href="javascript:;" onclick="remove(${cookieArray[i].id})">删除</a></div></li>`;
                     break;
                 }
             }
         }
-        console.log(html);
         $(".shopping-list .nogoods").css({
             display: "none"
         })
         $(".shopping-list .goods ul").html(html);
+        $(".shopping-cart .totlePrice").html(totlePrice);
     },
     listSum: function() {
         var cookie;
@@ -407,27 +426,54 @@ $.extend(ShopCar.prototype, {
         }
         var cookieArray = JSON.parse(cookie);
         var sum = 0;
-        var totlePrice = 0
+
         for (var i = 0; i < cookieArray.length; i++) {
             console.log(cookieArray)
             sum += Number(cookieArray[i].num);
-            for (var j = 0; j < this.json.length; j++) {
-                if (cookieArray[i].id == this.json[j].id) {
-                    totlePrice += Number(cookieArray[i].num) * Number(this.json[j].price);
-                }
-            }
-
         }
         console.log(totlePrice);
         $(".shopping-cart .totleNum").find("b").html(sum);
-        $(".shopping-cart .totlePrice").html(totlePrice);
+
     },
-    
+
 })
 var shopcar = new ShopCar();
 shopcar.init();
-function remove(id){
-    $.removeCookie("id",{path:"/"});
-    
+
+function remove(id) {
+    $.removeCookie("id", { path: "/" });
+
     shopcar.showList();
- }
+}
+//商品详情页
+console.log($("#goods ul"));
+$("#goods ul").on("click", "li", function(event) {
+        var target = event.target;
+        console.log(target);
+        var li = $(target).parents("li")[0];
+        console.log(li);
+        var aLi = Array.from($("#goods ul li"));
+        console.log(aLi);
+        if (aLi.indexOf(li) != -1) {
+            $.cookie("goodsId", li.getAttribute("data-id"));
+            location.href = "details.html";
+        }
+    })
+    //选项卡；
+function jSon(num) {
+    var options = {
+        url: "http://localhost:8888/proxy/www.yiguo.com/Home/Floor?floorId=0" + num + "_channelhome&_=1539791297392",
+        type: "GET",
+        context: this
+
+    }
+    return $.ajax(options);
+}
+console.log($("#floor .floor"));
+for (let i = 1; i <= 9; i++) {
+    jSon(i)
+        .then(function(res) {
+            console.log($("#floor .floor").eq(i - 1));
+            $("#floor .floor").eq(i - 1).html(res);
+        })
+}
