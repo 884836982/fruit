@@ -233,63 +233,61 @@ $(".goTop").click(function() {
 });
 //吸顶菜单
 $(document).scroll(function() {
-        var scrollTop = $("html,body").scrollTop();
-        if (scrollTop >= 100) {
-            $("#search").addClass("search_fixed")
-        } else {
-            $("#search").removeClass("search_fixed")
-        }
-        if (scrollTop >= 500) {
-            $(".goTop").css({
-                display: "block"
-            })
-        } else {
-            $(".goTop").css({
-                display: "none"
-            })
-        }
-        if (scrollTop >= 700) {
-            $(".floor-guide").css({
-                display: "block"
-            })
-            $.each($(".floor"), function(index, items) {
-                if (scrollTop > arguments[1].offsetTop) {
-                    $(".floor-guide a").eq(index).addClass("current").siblings("a").removeClass("current");
-                }
-            })
-        } else {
-            $(".floor-guide").css({
-                display: "none"
-            })
-        }
-    })
-    //购物车
-var totlePrice = 0
+    var scrollTop = $("html,body").scrollTop();
+    if (scrollTop >= 100) {
+        $("#search").addClass("search_fixed")
+    } else {
+        $("#search").removeClass("search_fixed")
+    }
+    if (scrollTop >= 500) {
+        $(".goTop").css({
+            display: "block"
+        })
+    } else {
+        $(".goTop").css({
+            display: "none"
+        })
+    }
+    if (scrollTop >= 700) {
+        var curId = ""
+        $(".floor-guide").css({
+            display: "block"
+        })
+        $.each($(".floor"), function(index, items) {
+            if (scrollTop > arguments[1].offsetTop) {
+                $(".floor-guide a").eq(index).addClass("current").siblings("a").removeClass("current");
+            }
+        })
+    } else {
+        $(".floor-guide").css({
+            display: "none"
+        })
+    }
+})
 
+//购物车
 function ShopCar() {}
 $.extend(ShopCar.prototype, {
     init: function() {
         this.main = $("#goods ul");
         this.timer = null;
-
+        this.totlePrice = 0
+        this.json = 0;
         this.loadJson()
             .then(function(res) {
+                this.json = res.goodsList;
                 console.log(res);
-                this.json = res.list;
                 console.log(this.json);
                 this.renderPage()
+                this.bindEvent();
+                this.listSum();
             })
-        this.bindEvent();
-        this.listSum();
+
     },
     loadJson: function() {
         var opt = {
-            url: "http://localhost:8888/proxy/shop.juanpi.com/gsort?key=pcshouye&type=1&zhouyi_ids=p1_c4_l4_0",
+            url: "http://localhost:8888/proxy/script/data.json",
             type: "GET",
-            data: {
-                page: this.page
-            },
-            datatype: "json",
             context: this
         }
         return $.ajax(opt);
@@ -298,10 +296,10 @@ $.extend(ShopCar.prototype, {
         console.log(this.json);
         var html = "";
         for (var i = 0; i < this.json.length; i++) {
-            html += ` <li class="product_item j_product current" data-id=${this.json[i].goods_id}>
+            html += ` <li class="product_item j_product current" data-id=${this.json[i].id}>
             <div class="p_img clearfix">
                 <a href="javascript:;" target="_blank">
-                    <img src="${this.json[i].pic_url}" width="290" height="290" class="j_product_img">
+                    <img src="${this.json[i].img}" width="290" height="290" class="j_product_img">
                 </a>
             </div>
             <div class="p_info clearfix">
@@ -312,21 +310,33 @@ $.extend(ShopCar.prototype, {
                         <font color="red">榴莲</font>班戟150g(6个)</a>
                 </div>
                 <div class="p_price">
-                    <span class="price"><strong>¥${this.json[i].cprice}</strong></span>
+                    <span class="price"><strong>¥${this.json[i].price}</strong></span>
 
                 </div>
             </div>
 
             <div class="p-buy">
                 <span></span>
-                <a class="btn-buy" href="javascript:;" data-id=${this.json[i].goods_id}>加入购物车</a>
+                <a class="btn-buy" href="javascript:;" data-id=${this.json[i].id}>加入购物车</a>
             </div>
         </li> `
         }
         this.main.html(html);
     },
     bindEvent: function() {
-        $("#goods ul").on("click", ".btn-buy", this.addCar.bind(this));
+        console.log($("#goods li"));
+        $("#goods ul").on("click", "li", function(event) {
+            console.log(event);
+            var evt = event || window.event;
+            if (evt.stopPropagation) {
+                evt.stopPropagation();
+            } else {
+                evt.cancelBubble = true;
+            }
+            console.log(this);
+            this.addCar(this);
+            window.history.back();
+        }.bind(this));
         $(".shopping-cart").on("mouseenter", this.showList.bind(this));
         $(".shopping-btn").on("mouseenter", function() {
             clearTimeout(this.timer)
@@ -389,26 +399,30 @@ $.extend(ShopCar.prototype, {
             $.cookie("shopCar", `[{"id":"${goodsId}","num":"1"}]`);
         }
         this.listSum();
+        this.showList();
     },
 
     showList: function() {
         // var target = event.target;
-
         // if (target != $(".shopping-cart dl")[0]) return 0;
+        this.totlePrice = 0;
         var cooke;
         if (!(cookie = $.cookie("shopCar"))) {
             return 0;
         };
         var cookieArray = JSON.parse(cookie);
         var html = "";
+        console.log(cookieArray, this.json);
         for (var i = 0; i < cookieArray.length; i++) {
             for (var j = 0; j < this.json.length; j++) {
                 if (cookieArray[i].id == this.json[j].id) {
-                    totlePrice += Number(cookieArray[i].num) * Number(this.json[j].cprice);
+                    console.log(Number(cookieArray[i].num), Number(this.json[j].price))
+                    this.totlePrice += Number(cookieArray[i].num) * Number(this.json[j].price);
+                    console.log(cookieArray[i].num);
                     html += `<li data-id = ${cookieArray[i].id}><div class="l"><a href="http://www.yiguo.com/product/1356627.html" target="_blank">
-                    <img src="${this.json[j].pic_url}" width="42" height="42"></a></div><div class="c">
-                <a href="http://www.yiguo.com/product/1356627.html">${this.json[j].title}</a></div><div class="r"><b>¥${this.json[j].cprice}</b> * ${cookieArray[i].num}<a href="javascript:;" onclick="remove(${cookieArray[i].id})">删除</a></div></li>`;
-                    break;
+                    <img src="${this.json[j].img}" width="42" height="42"></a></div><div class="c">
+                <a href="http://www.yiguo.com/product/1356627.html">${this.json[j].title}</a></div><div class="r"><b>¥${this.json[j].price}</b> *${cookieArray[i].num}<a href="javascript:;" onclick="remove(${cookieArray[i].id})">删除</a></div></li>`;
+
                 }
             }
         }
@@ -416,7 +430,8 @@ $.extend(ShopCar.prototype, {
             display: "none"
         })
         $(".shopping-list .goods ul").html(html);
-        $(".shopping-cart .totlePrice").html(totlePrice);
+        console.log(this.totlePrice);
+        $(".shopping-cart .totlePrice").html(this.totlePrice);
     },
     listSum: function() {
         var cookie;
@@ -429,31 +444,31 @@ $.extend(ShopCar.prototype, {
 
         for (var i = 0; i < cookieArray.length; i++) {
             console.log(cookieArray)
-            sum += Number(cookieArray[i].num);
+            if (cookieArray[i].id) {
+                sum += Number(cookieArray[i].num);
+            }
+
         }
-        console.log(totlePrice);
+        console.log(sum);
+        if (sum != 0) {
+            this.showList();
+        }
         $(".shopping-cart .totleNum").find("b").html(sum);
-
     },
-
 })
 var shopcar = new ShopCar();
 shopcar.init();
 
 function remove(id) {
     $.removeCookie("id", { path: "/" });
-
     shopcar.showList();
 }
 //商品详情页
 console.log($("#goods ul"));
 $("#goods ul").on("click", "li", function(event) {
         var target = event.target;
-        console.log(target);
         var li = $(target).parents("li")[0];
-        console.log(li);
         var aLi = Array.from($("#goods ul li"));
-        console.log(aLi);
         if (aLi.indexOf(li) != -1) {
             $.cookie("goodsId", li.getAttribute("data-id"));
             location.href = "details.html";
@@ -469,11 +484,9 @@ function jSon(num) {
     }
     return $.ajax(options);
 }
-console.log($("#floor .floor"));
 for (let i = 1; i <= 9; i++) {
     jSon(i)
         .then(function(res) {
-            console.log($("#floor .floor").eq(i - 1));
             $("#floor .floor").eq(i - 1).html(res);
         })
 }
