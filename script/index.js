@@ -163,8 +163,8 @@ $(function() {
         console.log(nowIndex);
         $(".b-img li").each(function(i, e) {
             $(e).removeClass("current")
-        });
-        $(".b-img li").eq(nowIndex).addClass("current")
+        });       
+        $(".b-img li").eq(nowIndex).addClass("current");
         $(".b-dot li").eq(nowIndex)
             .addClass("on")
             .siblings("li")
@@ -173,12 +173,10 @@ $(function() {
     });
     //自动轮播
     function autoplay() {
-        console.log(1);
         clearInterval(timer);
         timer = setInterval(function() {
-            console.log($(".b-btn .next"));
             $(".b-btn .next").triggerHandler("click");
-        }, 4500)
+        }, 3000)
     }
     $("#banner").mouseenter(function() {
         clearInterval(timer);
@@ -195,13 +193,6 @@ $(function() {
             $(e).removeClass("current")
         });
         $(".b-img li").eq($(this).index()).addClass("current")
-            // $(".b-img li").css({
-            //         display: "none"
-            //     }).removeClass("current")
-            //     .eq($(this).index()).css({
-            //         display: "block",
-            //     }).addClass("current")
-
     })
 })
 $(".b-bot li").mouseleave(function() {
@@ -213,76 +204,61 @@ $(".b-bot li").mouseleave(function() {
             display: "none"
         })
     })
-    //加入购物车
-$(".product_item").mouseenter(function() {
-    $(this).addClass("current").css({
-
-            // -webkit - transform:"translateX(5px)",
-            // -moz - transform: "translateX(5px)",
-            // -ms - transform: "translateX(5px)",
-            // -o - transform: "translateX(5px)",
-            transform: "translateX(5px)",
-        })
-        .siblings(".product_item").removeClass("current").css({
-            transform: "translateX(0px)"
-        })
-});
 //回到顶部
 $(".goTop").click(function() {
     $("html,body").scrollTop(0);
 });
 //吸顶菜单
 $(document).scroll(function() {
-    var scrollTop = $("html,body").scrollTop();
-    if (scrollTop >= 100) {
-        $("#search").addClass("search_fixed")
-    } else {
-        $("#search").removeClass("search_fixed")
-    }
-    if (scrollTop >= 500) {
-        $(".goTop").css({
-            display: "block"
-        })
-    } else {
-        $(".goTop").css({
-            display: "none"
-        })
-    }
-    if (scrollTop >= 700) {
-        var curId = ""
-        $(".floor-guide").css({
-            display: "block"
-        })
-        $.each($(".floor"), function(index, items) {
-            if (scrollTop > arguments[1].offsetTop) {
-                $(".floor-guide a").eq(index).addClass("current").siblings("a").removeClass("current");
-            }
-        })
-    } else {
-        $(".floor-guide").css({
-            display: "none"
-        })
-    }
-})
-
-//购物车
+        var scrollTop = $("html,body").scrollTop();
+        if (scrollTop >= 100) {
+            $("#search").addClass("search_fixed")
+        } else {
+            $("#search").removeClass("search_fixed")
+        }
+        if (scrollTop >= 500) {
+            $(".goTop").css({
+                display: "block"
+            })
+        } else {
+            $(".goTop").css({
+                display: "none"
+            })
+        }
+        if (scrollTop >= 700) {
+            $(".floor-guide").css({
+                display: "block"
+            })
+            $.each($(".floor"), function(index, items) {
+                if (scrollTop > arguments[1].offsetTop) {
+                    $(".floor-guide a").eq(index).addClass("current").siblings("a").removeClass("current");
+                }
+            })
+        } else {
+            $(".floor-guide").css({
+                display: "none"
+            })
+        }
+    })
+    //购物车
 function ShopCar() {}
+
 $.extend(ShopCar.prototype, {
     init: function() {
         this.main = $("#goods ul");
         this.timer = null;
-        this.totlePrice = 0
-        this.json = 0;
+        this.totlePrice = 0;
         this.loadJson()
             .then(function(res) {
                 this.json = res.goodsList;
                 console.log(res);
                 console.log(this.json);
-                this.renderPage()
-                this.bindEvent();
-                this.listSum();
+                this.renderPage();
+                this.showList();
             })
-
+        
+        this.listSum();
+        
     },
     loadJson: function() {
         var opt = {
@@ -293,7 +269,6 @@ $.extend(ShopCar.prototype, {
         return $.ajax(opt);
     },
     renderPage: function() {
-        console.log(this.json);
         var html = "";
         for (var i = 0; i < this.json.length; i++) {
             html += ` <li class="product_item j_product current" data-id=${this.json[i].id}>
@@ -322,59 +297,22 @@ $.extend(ShopCar.prototype, {
         </li> `
         }
         this.main.html(html);
+        this.bindEvent();
     },
     bindEvent: function() {
-        console.log($("#goods li"));
-        $("#goods ul").on("click", "li", function(event) {
-            console.log(event);
-            var evt = event || window.event;
-            if (evt.stopPropagation) {
-                evt.stopPropagation();
-            } else {
-                evt.cancelBubble = true;
-            }
-            console.log(this);
-            this.addCar(this);
-            window.history.back();
-        }.bind(this));
-        $(".shopping-cart").on("mouseenter", this.showList.bind(this));
-        $(".shopping-btn").on("mouseenter", function() {
-            clearTimeout(this.timer)
-            $(".shopping-list").css({
-                display: "block"
+        $("#goods li").mouseenter(function(){
+            $(this).find(".btn-buy").css({
+                display:"block"
             })
         })
-
-        // $(".shopping-btn").on("mouseleave", function() {
-        //     clearTimeout(this.timer)
-        //     this.timer = setTimeout(function(){
-        //         $(".shopping-list").css({
-        //             display: "none"
-        //         })
-        //     },500)
-        // });
-        $(".shopping-list").on("mouseenter", function() {
-            clearTimeout(this.timer)
-            $(this).css({
-                display: "block"
+        $("#goods li").mouseleave(function(){
+            $(this).find(".btn-buy").css({
+                display:"none"
             })
         })
-        $(".shopping-list").on("mouseleave", function() {
-            clearTimeout(this.timer)
-            $(this).css({
-                display: "none"
-            })
-        })
-        $(".shopping-cart").on("click", function(event) {
-            var target = event.target;
-            if (target != $(".shopping-cart")[0]) return 0;
-            $.removeCookie("shopCar");
-            $(".shopping-list").triggerHandler("mouseleave");
-            this.listSum();
-        }.bind(this))
     },
-    addCar: function(event) {
-        var target = event.target;
+    addCar: function(target) {
+        // var target = event.target;
         var goodsId = $(target).attr("data-id");
         var cookie;
         if ((cookie = $.cookie("shopCar"))) {
@@ -403,8 +341,6 @@ $.extend(ShopCar.prototype, {
     },
 
     showList: function() {
-        // var target = event.target;
-        // if (target != $(".shopping-cart dl")[0]) return 0;
         this.totlePrice = 0;
         var cooke;
         if (!(cookie = $.cookie("shopCar"))) {
@@ -412,17 +348,14 @@ $.extend(ShopCar.prototype, {
         };
         var cookieArray = JSON.parse(cookie);
         var html = "";
-        console.log(cookieArray, this.json);
         for (var i = 0; i < cookieArray.length; i++) {
             for (var j = 0; j < this.json.length; j++) {
                 if (cookieArray[i].id == this.json[j].id) {
-                    console.log(Number(cookieArray[i].num), Number(this.json[j].price))
                     this.totlePrice += Number(cookieArray[i].num) * Number(this.json[j].price);
-                    console.log(cookieArray[i].num);
                     html += `<li data-id = ${cookieArray[i].id}><div class="l"><a href="http://www.yiguo.com/product/1356627.html" target="_blank">
                     <img src="${this.json[j].img}" width="42" height="42"></a></div><div class="c">
-                <a href="http://www.yiguo.com/product/1356627.html">${this.json[j].title}</a></div><div class="r"><b>¥${this.json[j].price}</b> *${cookieArray[i].num}<a href="javascript:;" onclick="remove(${cookieArray[i].id})">删除</a></div></li>`;
-
+                <a href="http://www.yiguo.com/product/1356627.html">${this.json[j].title}</a></div><div class="r"><b>¥${this.json[j].price}</b> * ${cookieArray[i].num}<a href="javascript:;" onclick="remove(${i})">删除</a></div></li>`;
+                    break;
                 }
             }
         }
@@ -430,7 +363,6 @@ $.extend(ShopCar.prototype, {
             display: "none"
         })
         $(".shopping-list .goods ul").html(html);
-        console.log(this.totlePrice);
         $(".shopping-cart .totlePrice").html(this.totlePrice);
     },
     listSum: function() {
@@ -443,32 +375,67 @@ $.extend(ShopCar.prototype, {
         var sum = 0;
 
         for (var i = 0; i < cookieArray.length; i++) {
-            console.log(cookieArray)
-            if (cookieArray[i].id) {
-                sum += Number(cookieArray[i].num);
-            }
-
-        }
-        console.log(sum);
-        if (sum != 0) {
-            this.showList();
+            sum += Number(cookieArray[i].num);
         }
         $(".shopping-cart .totleNum").find("b").html(sum);
+        
+
     },
+
 })
 var shopcar = new ShopCar();
 shopcar.init();
-
-function remove(id) {
-    $.removeCookie("id", { path: "/" });
+var timer1 = null;
+//购物车显示隐藏
+$(".shopping-cart").on("mouseenter", function() {
+    clearTimeout(timer1);
+    $(this).find(".shopping-list").css({
+        display: "block"
+    })
+})
+$(".shopping-cart").on("mouseleave", function() {
+    clearTimeout(timer1);
+    timer1 = setTimeout(function(){
+        $(".shopping-cart").find(".shopping-list").css({
+            display: "none"
+        })
+    },500)  
+})
+$(".shopping-list").on("mouseenter",function(){
+    clearTimeout(timer1);
+    $(this).css({
+        display:"block"
+    })
+})
+$(".shopping-list").on("mouseleave",function(){
+    clearTimeout(timer1);
+    $(this).css({
+        display:"none"
+    })
+})
+//删除购物车商品
+function remove(i) {
+    var cooke;
+        if (!(cookie = $.cookie("shopCar"))) {
+            return 0;
+        };
+        var cookieArray = JSON.parse(cookie);
+    cookieArray.splice(i,1);
+    $.cookie("shopCar", JSON.stringify(cookieArray));
+//    cookieArray[id]
     shopcar.showList();
+    shopcar.listSum();
 }
 //商品详情页
-console.log($("#goods ul"));
 $("#goods ul").on("click", "li", function(event) {
         var target = event.target;
+        if(target.className == "btn-buy"){
+            shopcar.addCar(target);
+            return 0;
+        }
         var li = $(target).parents("li")[0];
         var aLi = Array.from($("#goods ul li"));
+
         if (aLi.indexOf(li) != -1) {
             $.cookie("goodsId", li.getAttribute("data-id"));
             location.href = "details.html";
@@ -484,9 +451,13 @@ function jSon(num) {
     }
     return $.ajax(options);
 }
+
 for (let i = 1; i <= 9; i++) {
+
     jSon(i)
         .then(function(res) {
             $("#floor .floor").eq(i - 1).html(res);
         })
+
+
 }

@@ -380,7 +380,6 @@
 <script src="script/jquery-3.3.1.js"></script>
 <script src="script/ajax.js"></script>
 <script>
-    console.log(username);
     var password = document.getElementById("Password");
     var surepsd = document.getElementById("ConfimPassword");
     var other = document.getElementById("other");
@@ -527,9 +526,8 @@
             num = 0;
             return 0;
         }
-        console.log(`username=${username.value}&password=${password.value}`);
-        var url = "http://localhost:8888/proxy/localhost/test/kaola/dist/php/register.php";
-        ajaxPost(url, `username=${username.value}&password=${password.value}`)
+        var url = "http://localhost:8888/proxy/localhost/kaola/dist/php/register.php?"+`username=${username.value}&password=${password.value}`;
+        ajaxGet(url)
             .then(function(res) {
                 if (res == "注册成功") {
                     console.log(res);
@@ -537,30 +535,9 @@
                     location.href = "register1.html";
 
                 } else {
-                    alert(res);
+                    console.log(res);
                     return 0;
                 }
             })
-            // var opt = {
-            //     url: "http://localhost:8888/php/register.php",
-            //     type: "Post",
-            //     data: {
-            //         username: "${username.value}",
-            //         password: "${password.value}"
-            //     }
-
-        // }
-        // $.ajax(opt)
-        //     .then(function(res) {
-        //         if (res == "注册成功") {
-        //             console.log(res);
-        //             document.cookie = "username=" + username.value;
-        //             // location.href = "register1.html";
-
-        //         } else {
-        //             alert(res);
-        //             return 0;
-        //         }
-        //     })
     }
 </script>
