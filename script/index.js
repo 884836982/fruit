@@ -142,9 +142,11 @@ $(function() {
     var timer = null;
     autoplay();
     $(".b-btn .prev").click(function() {
-        if (nowIndex == -1) {
+        if (nowIndex == 0) {
             nowIndex = $(".b-img li").length - 1;
-        }
+        }else{
+			nowIndex--;
+		}
         $.each($(".b-img li"), function(i, e) {
             $(e).removeClass("current")
         });
@@ -153,13 +155,15 @@ $(function() {
             .addClass("on")
             .siblings("li")
             .removeClass("on")
-        nowIndex--;
+        
     });
     //点击右按钮
     $(".b-btn .next").click(function() {
-        if (nowIndex == $(".b-img li").length) {
+        if (nowIndex == $(".b-img li").length-1) {
             nowIndex = 0;
-        }
+        }else{
+			nowIndex++;
+		}
         console.log(nowIndex);
         $(".b-img li").each(function(i, e) {
             $(e).removeClass("current")
@@ -169,7 +173,7 @@ $(function() {
             .addClass("on")
             .siblings("li")
             .removeClass("on");
-        nowIndex++;
+        
     });
     //自动轮播
     function autoplay() {
