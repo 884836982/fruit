@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset1.css">
+    <link rel="stylesheet" href="css/xiaomi1.css">
+    <script>
+        var desW = 320; /*750或640*/
+        var winW = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = winW / desW * 100 + "px";
+    </script>
+</head>
+
+<body>
+    <header>
+        <i></i> 职位详情
+        <span></span>
+    </header>
+    <section>
+        <h2>商业拓展<span><img class="img2" src="images1/3.png" alt="">未收藏</span></h2>
+        <div class="list clearfix">
+            <p><img src="images1/4.png" alt="">8K-15K</p>
+            <p><img src="images1/5.png" alt="">北京</p>
+            <p><img src="images1/6.png" alt="">全职</p>
+            <p><img src="images1/7.png" alt="">3-5年</p>
+            <p><img src="images1/8.png" alt="">本科及以上</p>
+            <h3>职位诱惑：时尚品类 团队专业 团队专业迅速发展</h3>
+        </div>
+        <figure>
+            <img class="img1" src="" alt="" />
+            <figcaption>
+                <h2></h2>
+                <h3></h3>
+                <i></i>
+            </figcaption>
+        </figure>
+        <div class="content">
+            <h4>职位描述</h4>
+            <div class="cont">
+                <p class="first">工作内容</p>
+                <p>- 负责开发与拓展高端客户群体和渠道方案的制定;</p>
+                <p>- 拓展时尚品牌与渠道合作资源，促成C端供货和销售合作;</p>
+                <p>- 负责对现有客户进行定期 维护和服务，及时有效的为大客户提供高品质服务以保证客户满意；</p>
+                <p>- 负责开发与拓展高端客户群体和渠道方案的制定;</p>
+                <p>- 负责开发与拓展高端客户群体和渠道方案的制定;</p>
+                <p>- 拓展时尚品牌与渠道合作资源，促成C端供货和销售合作;</p>
+                <p>- 负责对现有客户进行定期 维护和服务，及时有效的为大客户提供高品质服务以保证客户满意；</p>
+                <p>- 负责开发与拓展高端客户群体和渠道方案的制定;</p>
+
+            </div>
+        </div>
+    </section>
+    <footer>投递简历</footer>
+</body>
+
+</html>
+<script src="script/jquery-3.3.1.js"></script>
+<script src="script/jquery.cookie.js"></script>
+<script>
+    function json() {
+        var opt = {
+            url: "http://localhost:8888/proxy/script/data1.json",
+            type: "GET",
+            context: this
+        }
+        return $.ajax(opt);
+    }
+    var data = '';
+    console.log($.cookie("companyId"))
+    if (data = $.cookie("companyId")) {
+        json()
+            .then(function(res) {
+                console.log(res);
+
+                for (var i = 0; i < res.length; i++) {
+                    if (data == res[i].companyId) {
+                        $("figure img").attr("src", res[i].companyLogo);
+
+                        $("figcaption h2").html(res[i].companyFullName);
+                        $("figcaption h3").html(res[i].positionName);
+                        return;
+                    }
+
+                }
+            })
+    }
+</script>

@@ -156,11 +156,12 @@
     var btn = document.getElementById("btnLogin");
     //登录提交
     btn.onclick = function() {
-        var url = "http://localhost:8888/proxy/localhost/kaola/dist/php/login.php?"+`username=${username.value}&password=${password.value}`;
+        var url = "http://localhost:8888/proxy/localhost/test/kaola/dist/php/login.php?" + `username=${username.value}&password=${password.value}`;
         ajaxGet(url)
             .then(function(res) {
                 if (res == "登录成功") {
                     console.log(res);
+                    document.cookie = "username=" + username.value;
                     location.href = "index.html";
                 } else {
                     alert(res);

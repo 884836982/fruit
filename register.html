@@ -36,6 +36,7 @@
         }
         
         .register .field-name {
+            line-height: 38px;
             float: left;
             display: inline-block;
             width: 220px;
@@ -380,6 +381,7 @@
 <script src="script/jquery-3.3.1.js"></script>
 <script src="script/ajax.js"></script>
 <script>
+    console.log(username);
     var password = document.getElementById("Password");
     var surepsd = document.getElementById("ConfimPassword");
     var other = document.getElementById("other");
@@ -526,7 +528,9 @@
             num = 0;
             return 0;
         }
-        var url = "http://localhost:8888/proxy/localhost/kaola/dist/php/register.php?"+`username=${username.value}&password=${password.value}`;
+        console.log(`username=${username.value}&password=${password.value}`);
+        var url = "http://localhost:8888/proxy/localhost/test/kaola/dist/php/register.php?" + `username=${username.value}&password=${password.value}`;
+        console.log(url);
         ajaxGet(url)
             .then(function(res) {
                 if (res == "注册成功") {
@@ -535,7 +539,7 @@
                     location.href = "register1.html";
 
                 } else {
-                    console.log(res);
+                    alert(res);
                     return 0;
                 }
             })

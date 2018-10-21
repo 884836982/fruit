@@ -143,6 +143,16 @@ body {
   text-align: left; }
 
 /*=================header=============*/
+#ad {
+  width: 100%; }
+
+#ad a {
+  width: 100%; }
+
+#ad img {
+  width: 100%;
+  height: 70px; }
+
 #header {
   width: 100%;
   height: 30px;
@@ -314,7 +324,7 @@ a {
     color: #008842; }
 
 #header .fr {
-  width: 518px;
+  width: 565px;
   height: 30px;
   float: right; }
   #header .fr li {

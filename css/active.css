@@ -248,7 +248,11 @@ body {
         font-size: 24px;
         line-height: 1; }
         .pro-col2 .item-con .con-r .price sup {
+          display: inline-block;
+          line-height: 24px;
           top: -3px;
+          height: 24px;
+          vertical-align: middle;
           margin-right: 2px; }
       .pro-col2 .item-con .con-r .btn {
         margin-top: 10px;
@@ -329,7 +333,11 @@ body {
   font-size: 24px;
   line-height: 1; }
   .pro .item-con .price sup {
+    display: inline-block;
+    line-height: 24px;
     top: -3px;
+    height: 24px;
+    vertical-align: middle;
     margin-right: 2px; }
   .pro .item-con .price del {
     font-size: 14px;
@@ -337,7 +345,12 @@ body {
     display: inline-block;
     color: #666; }
     .pro .item-con .price del sup {
-      top: -1px; }
+      display: inline-block;
+      line-height: 24px;
+      top: -3px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 2px; }
 
 .pro .item-con .btn {
   background: #fd5452;
